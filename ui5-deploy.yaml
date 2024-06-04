@@ -13,6 +13,7 @@ builder:
     - name: deploy-to-abap
       afterTask: generateCachebusterInfo
       configuration:
+        log: 4
         target:
           destination: S4HC_STARTER_DEV_SAML_ASSERTION
           url: https://my407970-api.s4hana.cloud.sap

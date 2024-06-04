@@ -38,7 +38,7 @@
     "crossNavigation": {
       "inbounds": {
         "E-PTD-generate": {
-          "semanticObject": "E-PTD",
+          "semanticObject": "E_PTD",
           "action": "generate",
           "title": "{{flpTitle}}",
           "signature": {
