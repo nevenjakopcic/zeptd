@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: hr.axians.zeptd
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: S4HC_STARTER_DEV_SAML_ASSERTION
+          url: https://my407970-api.s4hana.cloud.sap
+        app:
+          name: ZEPTD
+          package: ZEPTD
+          transport: ZNCK900237
+        exclude:
+          - /test/
