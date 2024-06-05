@@ -50,16 +50,16 @@
             <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
             <EntityType Name="ZEPTD_CDSType">
                 <Key>
-                    <PropertyRef Name="BillingDocument"/>
+                    <PropertyRef Name="DeliveryDocument"/>
                 </Key>
-                <Property Name="BillingDocument" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="DeliveryDocument" Type="Edm.String" Nullable="false" MaxLength="10"/>
                 <Property Name="SalesOrganization" Type="Edm.String" Nullable="false" MaxLength="4"/>
-                <Property Name="BillingDocumentDate" Type="Edm.Date"/>
+                <Property Name="CreationDate" Type="Edm.Date"/>
                 <Property Name="Product" Type="Edm.String" Nullable="false" MaxLength="18"/>
-                <Property Name="BillingDocumentItemText" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="DeliveryDocumentItemText" Type="Edm.String" Nullable="false" MaxLength="40"/>
                 <Property Name="Batch" Type="Edm.String" Nullable="false" MaxLength="10"/>
-                <Property Name="BillingQuantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
-                <Property Name="BillingQuantityUnit" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="ActualDeliveryQuantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="DeliveryQuantityUnit" Type="Edm.String" Nullable="false" MaxLength="3"/>
                 <Property Name="ItemNetWeight" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="3"/>
                 <Property Name="ItemGrossWeight" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="3"/>
                 <Property Name="ItemWeightUnit" Type="Edm.String" Nullable="false" MaxLength="3"/>
@@ -72,10 +72,9 @@
             <EntityContainer Name="Container">
                 <EntitySet Name="ZEPTD_CDS" EntityType="com.sap.gateway.srvd.zeptd_srv_def.v0001.ZEPTD_CDSType"/>
             </EntityContainer>
-            <Annotations Target="SAP__self.ZEPTD_CDSType/BillingDocument">
+            <Annotations Target="SAP__self.ZEPTD_CDSType/DeliveryDocument">
                 <Annotation Term="SAP__common.IsUpperCase"/>
-                <Annotation Term="SAP__common.Label" String="Billing Document"/>
-                <Annotation Term="SAP__common.Heading" String="Bill. Doc."/>
+                <Annotation Term="SAP__common.Label" String="Delivery"/>
             </Annotations>
             <Annotations Target="SAP__self.ZEPTD_CDSType/SalesOrganization">
                 <Annotation Term="SAP__common.IsUpperCase"/>
@@ -92,12 +91,12 @@
                 <Annotation Term="SAP__common.Label" String="Batch"/>
                 <Annotation Term="SAP__common.QuickInfo" String="Batch Number"/>
             </Annotations>
-            <Annotations Target="SAP__self.ZEPTD_CDSType/BillingQuantity">
-                <Annotation Term="SAP__measures.Unit" Path="BillingQuantityUnit"/>
-                <Annotation Term="SAP__common.Label" String="Invoiced Quantity"/>
-                <Annotation Term="SAP__common.QuickInfo" String="Actual Invoiced Quantity"/>
+            <Annotations Target="SAP__self.ZEPTD_CDSType/ActualDeliveryQuantity">
+                <Annotation Term="SAP__measures.Unit" Path="DeliveryQuantityUnit"/>
+                <Annotation Term="SAP__common.Label" String="Delivery Quantity"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Actual quantity delivered (in sales units)"/>
             </Annotations>
-            <Annotations Target="SAP__self.ZEPTD_CDSType/BillingQuantityUnit">
+            <Annotations Target="SAP__self.ZEPTD_CDSType/DeliveryQuantityUnit">
                 <Annotation Term="SAP__common.IsUnit"/>
                 <Annotation Term="SAP__common.Label" String="Sales Unit"/>
                 <Annotation Term="SAP__common.Heading" String="SU"/>
@@ -176,7 +175,7 @@
                         <PropertyValue Property="FilterExpressionRestrictions">
                             <Collection>
                                 <Record>
-                                    <PropertyValue Property="Property" PropertyPath="BillingQuantity"/>
+                                    <PropertyValue Property="Property" PropertyPath="ActualDeliveryQuantity"/>
                                     <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
                                 </Record>
                                 <Record>
@@ -262,10 +261,11 @@
                 <Annotation Term="SAP__capabilities.KeyAsSegmentSupported"/>
                 <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported"/>
             </Annotations>
-            <Annotations Target="SAP__self.ZEPTD_CDSType/BillingDocumentDate">
-                <Annotation Term="SAP__common.Label" String="Billing Date"/>
+            <Annotations Target="SAP__self.ZEPTD_CDSType/CreationDate">
+                <Annotation Term="SAP__common.Label" String="Created On"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Record Creation Date"/>
             </Annotations>
-            <Annotations Target="SAP__self.ZEPTD_CDSType/BillingDocumentItemText">
+            <Annotations Target="SAP__self.ZEPTD_CDSType/DeliveryDocumentItemText">
                 <Annotation Term="SAP__common.Label" String="Item Description"/>
                 <Annotation Term="SAP__common.QuickInfo" String="Short Text for Sales Order Item"/>
             </Annotations>
