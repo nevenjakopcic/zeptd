@@ -1,0 +1,15 @@
+<mvc:View controllerName="hr.axians.zeptd.controller.App"
+    xmlns="sap.m"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
+    displayBlock="true">
+    <App id="app">
+        <f:FlexibleColumnLayout
+            id="layout"
+            layout="{mainView>/layout}"
+            backgroundDesign="Translucent">
+            
+            </f:FlexibleColumnLayout>
+    </App>
+</mvc:View>

@@ -1,0 +1,37 @@
+<mvc:View controllerName="hr.axians.zeptd.controller.Detail"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:ux="sap.uxap"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.m">
+    <ux:ObjectPageLayout id="objectPageLayout">
+        <ux:headerTitle>
+            <ux:ObjectPageDynamicHeaderTitle id="objectPageDynamicHeader">
+                <ux:expandedHeading>
+                    <Title
+                        id="title1"
+                        text="{DeliveryDocument}"
+                        level="H2" />
+                </ux:expandedHeading>
+            </ux:ObjectPageDynamicHeaderTitle>
+        </ux:headerTitle>
+
+        <ux:headerContent>
+            <FlexBox id="flexBox" wrap="Wrap">
+                <Avatar id="avatar" src="sap-icon://flight" />
+                <layout:VerticalLayout id="verticalLayout1" class="sapUiSmallMarginBeginEnd">
+                    <Label id="label1" text="{DeliveryDocument}" />
+                    <Label id="label2" text="{CreationDate}" />
+                </layout:VerticalLayout>
+            </FlexBox>
+        </ux:headerContent>
+
+        <ux:sections>
+            <ux:ObjectPageSection id="objectPageSection">
+                <ux:ObjectPageSubSection id="objectPageSubSection1">
+                    
+                </ux:ObjectPageSubSection>
+            </ux:ObjectPageSection>
+        </ux:sections>
+    </ux:ObjectPageLayout>
+</mvc:View>

@@ -1,0 +1,36 @@
+<mvc:View
+    controllerName="hr.axians.zeptd.controller.List"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
+    xmlns="sap.m">
+    <f:DynamicPage
+        id="dynamicPageOverviewId"
+        headerExpanded="true"
+        toggleHeaderOnTitleClick="true">
+        <f:content>
+            <!-- TODO maybe items is wrong -->
+            <List
+                id="list"
+                items="{/ZEPTD_CDS}"
+                growing="true"
+                growingThreshold="10"
+                growingScrollToLoad="true"
+                mode="{=  ${device>/system/phone} ? 'None' : 'SingleSelectMaster' }"
+                selectionChange="onSelect"
+                busyIndicatorDelay="0">
+                <items>
+                    <!-- TODO maybe attributes are wrong (title, intro) -->
+                    <ObjectListItem
+                        id="objectListItem"
+                        title="{DeliveryDocument}"
+                        intro="{CreationDate}"
+                        type="{=  ${device>/system/phone} ? 'Active' : 'Inactive' }"
+                        press="onSelect">
+                        
+                    </ObjectListItem>
+                </items>
+            </List>
+        </f:content>    
+    </f:DynamicPage>
+</mvc:View>

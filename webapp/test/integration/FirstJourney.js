@@ -10,7 +10,7 @@ sap.ui.define([
             opaTest("Start application", function (Given, When, Then) {
                 Given.iStartMyApp();
 
-                Then.onTheZEPTD_CDSList.iSeeThisPage();
+                Then.onTheMasterlist.iSeeThisPage();
 
             });
 
@@ -18,12 +18,12 @@ sap.ui.define([
             opaTest("Navigate to ObjectPage", function (Given, When, Then) {
                 // Note: this test will fail if the ListReport page doesn't show any data
                 
-                When.onTheZEPTD_CDSList.onFilterBar().iExecuteSearch();
+                When.onTheMasterlist.onFilterBar().iExecuteSearch();
                 
-                Then.onTheZEPTD_CDSList.onTable().iCheckRows();
+                Then.onTheMasterlist.onTable().iCheckRows();
 
-                When.onTheZEPTD_CDSList.onTable().iPressRow(0);
-                Then.onTheZEPTD_CDSObjectPage.iSeeThisPage();
+                When.onTheMasterlist.onTable().iPressRow(0);
+                Then.onTheEptddetails.iSeeThisPage();
 
             });
 

@@ -105,69 +105,61 @@
             "css": []
         },
         "routing": {
-            "config": {},
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "hr.axians.zeptd.view",
+                "controlAggregation": "beginColumnPages",
+                "controlId": "layout",
+                "bypassed": {
+                    "target": [
+                        "masterlist",
+                        "notFound"
+                    ]
+                },
+                "path": "hr.axians.zeptd.view"
+            },
             "routes": [
                 {
-                    "pattern": ":?query:",
-                    "name": "ZEPTD_CDSList",
-                    "target": "ZEPTD_CDSList"
+                    "name": "masterlist",
+                    "pattern": "",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": "masterlist"
                 },
                 {
-                    "pattern": "ZEPTD_CDS({key}):?query:",
-                    "name": "ZEPTD_CDSObjectPage",
-                    "target": "ZEPTD_CDSObjectPage"
+                    "name": "eptddetails",
+                    "pattern": "Eptd/{objectId}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": "eptddetails"
                 }
             ],
             "targets": {
-                "ZEPTD_CDSList": {
-                    "type": "Component",
-                    "id": "ZEPTD_CDSList",
-                    "name": "sap.fe.templates.ListReport",
-                    "options": {
-                        "settings": {
-                            "contextPath": "/ZEPTD_CDS",
-                            "variantManagement": "Page",
-                            "navigation": {
-                                "ZEPTD_CDS": {
-                                    "detail": {
-                                        "route": "ZEPTD_CDSObjectPage"
-                                    }
-                                }
-                            },
-                            "controlConfiguration": {
-                                "@com.sap.vocabularies.UI.v1.LineItem": {
-                                    "tableSettings": {
-                                        "type": "ResponsiveTable",
-                                        "selectionMode": "Multi",
-                                        "enableExport": false,
-                                        "selectAll": true
-                                    },
-                                    "actions": {
-                                        "generateXml": {
-                                            "press": "hr.axians.zeptd.ext.controller.GenerateXml.generateXml",
-                                            "visible": true,
-                                            "enabled": true,
-                                            "requiresSelection": true,
-                                            "text": "Generate E-PTD XML"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+                "masterlist": {
+                    "viewId": "list",
+                    "viewName": "List",
+                    "viewType": "XML",
+                    "viewLevel": 1,
+                    "transition": "slide",
+                    "controlAggregation": "beginColumnPages"
                 },
-                "ZEPTD_CDSObjectPage": {
-                    "type": "Component",
-                    "id": "ZEPTD_CDSObjectPage",
-                    "name": "sap.fe.templates.ObjectPage",
-                    "options": {
-                        "settings": {
-                            "editableHeaderContent": false,
-                            "contextPath": "/ZEPTD_CDS"
-                        }
-                    }
+                "eptddetails": {
+                    "viewId": "eptddetails",
+                    "viewName": "Detail",
+                    "viewType": "XML",
+                    "viewLevel": 2,
+                    "transition": "slide",
+                    "controlAggregation": "midColumnPages"
                 }
             }
+        },
+        "rootView": {
+            "viewName": "hr.axians.zeptd.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
         }
     },
     "sap.fiori": {
