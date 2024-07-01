@@ -1,41 +1,41 @@
-sap.ui.define(
-    [
-        "sap/ui/core/mvc/Controller",
-        "sap/ui/core/routing/History"
-    ],
+sap.ui.define([
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/core/routing/History"
+],
     function (Controller, History) {
         "use strict";
 
-        return Controller.extend(
-            "hr.axians.zeptd.controller.BaseController",
-            {
-                getRouter: function () {
-                    return this.getOwnerComponent().getRouter();
-                },
+        return Controller.extend("hr.axians.zeptd.controller.BaseController", {
 
-                getListSelector: function () {
-                    return this.getOwnerComponent().listSelector;
-                },
+            getRouter: function () {
+                return this.getOwnerComponent().getRouter();
+            },
 
-                getResourceBundle: function () {
-                    return this.getOwnerComponent()
-                        .getModel("i18n")
-                        .getResourceBundle();
-                },
+            getModel: function (name) {
+                return this.getView().getModel(name);
+            },
 
-                onNavBack: function () {
-                    let previousHash = History.getInstance().getPreviousHash();
+            setModel: function (model, name) {
+                return this.getView().setModel(model, name);
+            },
 
-                    if (previousHash !== undefined) {
-                        // the history contains a previous entry
-                        history.go(-1);
-                    } else {
-                        // otherwise we go backwards with a forward history
-                        let replace = true;
-                        this.getRouter().navTo("masterlist", {}, replace);
-                    }
+            getResourceBundle: function () {
+                return this.getOwnerComponent()
+                    .getModel("i18n")
+                    .getResourceBundle();
+            },
+
+            onNavBack: function () {
+                let previousHash = History.getInstance().getPreviousHash();
+
+                if (previousHash !== undefined) {
+                    // the history contains a previous entry
+                    history.go(-1);
+                } else {
+                    // otherwise we go backwards with a forward history
+                    this.getRouter().navTo("master", {}, true);
                 }
             }
-        );
+        });
     }
 );

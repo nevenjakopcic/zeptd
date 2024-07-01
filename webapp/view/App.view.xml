@@ -1,15 +1,17 @@
-<mvc:View controllerName="hr.axians.zeptd.controller.App"
+<mvc:View
+    controllerName="hr.axians.zeptd.controller.App"
+    displayBlock="true"
+    height="100%"
     xmlns="sap.m"
-    xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:mvc="sap.ui.core.mvc"
     xmlns:f="sap.f"
-    displayBlock="true">
-    <App id="app">
+    xmlns:mvc="sap.ui.core.mvc">
+    <App id="app"
+        busy="{appView>/busy}"
+        busyIndicatorDelay="{appView>/delay}">
         <f:FlexibleColumnLayout
             id="layout"
-            layout="{mainView>/layout}"
+            layout="{appView>/layout}"
             backgroundDesign="Translucent">
-            
-            </f:FlexibleColumnLayout>
+        </f:FlexibleColumnLayout>
     </App>
 </mvc:View>

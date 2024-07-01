@@ -10,11 +10,6 @@
         "title": "{{appTitle}}",
         "description": "{{appDescription}}",
         "resources": "resources.json",
-        "sourceTemplate": {
-            "id": "@sap/generator-fiori:lrop",
-            "version": "1.13.5",
-            "toolsId": "9bb512e1-d56e-4a00-bd9a-ff8df4505e99"
-        },
         "dataSources": {
             "mainService": {
                 "uri": "/sap/opu/odata4/sap/zeptd_srv_bind/srvd/sap/zeptd_srv_def/0001/",
@@ -52,7 +47,7 @@
     "sap.ui": {
         "technology": "UI5",
         "icons": {
-            "icon": "",
+            "icon": "sap-icon://detail-view",
             "favIcon": "",
             "phone": "",
             "phone@2": "",
@@ -66,14 +61,18 @@
         }
     },
     "sap.ui5": {
-        "flexEnabled": true,
+        "rootView": {
+            "viewName": "hr.axians.zeptd.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "app"
+        },
         "dependencies": {
-            "minUI5Version": "1.120.13",
+            "minUI5Version": "1.124.0",
             "libs": {
+                "sap.f": {},
                 "sap.m": {},
-                "sap.ui.core": {},
-                "sap.ushell": {},
-                "sap.fe.templates": {}
+                "sap.ui.core": {}
             }
         },
         "contentDensities": {
@@ -106,60 +105,54 @@
         },
         "routing": {
             "config": {
-                "routerClass": "sap.m.routing.Router",
+                "routerClass": "sap.f.routing.Router",
+                "type": "View",
                 "viewType": "XML",
-                "async": true,
-                "viewPath": "hr.axians.zeptd.view",
-                "controlAggregation": "beginColumnPages",
+                "path": "hr.axians.zeptd.view",
                 "controlId": "layout",
+                "controlAggregation": "beginColumnPages",
                 "bypassed": {
-                    "target": [
-                        "masterlist",
-                        "notFound"
-                    ]
+                    "target": "notFound"
                 },
-                "path": "hr.axians.zeptd.view"
+                "async": true
             },
             "routes": [
                 {
-                    "name": "masterlist",
                     "pattern": "",
-                    "titleTarget": "",
-                    "greedy": false,
-                    "target": "masterlist"
+                    "name": "master",
+                    "target": "master"
                 },
                 {
+                    "pattern": "EPTD/{objectId}",
                     "name": "eptddetails",
-                    "pattern": "Eptd/{objectId}",
-                    "titleTarget": "",
-                    "greedy": false,
-                    "target": "eptddetails"
+                    "target": [
+                        "master",
+                        "eptddetails"
+                    ]
                 }
             ],
             "targets": {
-                "masterlist": {
-                    "viewId": "list",
-                    "viewName": "List",
-                    "viewType": "XML",
-                    "viewLevel": 1,
-                    "transition": "slide",
-                    "controlAggregation": "beginColumnPages"
+                "master": {
+                    "name": "Master",
+                    "id": "master",
+                    "level": 1
                 },
                 "eptddetails": {
-                    "viewId": "eptddetails",
-                    "viewName": "Detail",
-                    "viewType": "XML",
-                    "viewLevel": 2,
-                    "transition": "slide",
+                    "name": "EPTDDetails",
+                    "id": "eptddetails",
+                    "level": 1,
+                    "controlAggregation": "midColumnPages"
+                },
+                "notFound": {
+                    "name": "NotFound",
+                    "id": "notFound"
+                },
+                "detailObjectNotFound": {
+                    "name": "DetailObjectNotFound",
+                    "id": "detailObjectNotFound",
                     "controlAggregation": "midColumnPages"
                 }
             }
-        },
-        "rootView": {
-            "viewName": "hr.axians.zeptd.view.App",
-            "type": "XML",
-            "async": true,
-            "id": "App"
         }
     },
     "sap.fiori": {

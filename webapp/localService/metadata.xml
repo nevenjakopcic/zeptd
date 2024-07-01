@@ -1,194 +1,194 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
     <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
-        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication" />
     </edmx:Reference>
     <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
-        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData" />
     </edmx:Reference>
     <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
-        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics" />
     </edmx:Reference>
     <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
-        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common" />
     </edmx:Reference>
     <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
-        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures" />
     </edmx:Reference>
     <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
-        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core" />
     </edmx:Reference>
     <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
-        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities" />
     </edmx:Reference>
     <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
-        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation" />
     </edmx:Reference>
     <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
-        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation" />
     </edmx:Reference>
     <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
-        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList" />
     </edmx:Reference>
     <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
-        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI" />
     </edmx:Reference>
     <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
-        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5" />
     </edmx:Reference>
     <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
-        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF" />
     </edmx:Reference>
     <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
-        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session" />
     </edmx:Reference>
     <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HIERARCHY',Version='0001',SAP__Origin='LOCAL')/$value">
-        <edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1" Alias="SAP__hierarchy"/>
+        <edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1" Alias="SAP__hierarchy" />
     </edmx:Reference>
     <edmx:DataServices>
         <Schema Namespace="com.sap.gateway.srvd.zeptd_srv_def.v0001" Alias="SAP__self">
-            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0" />
             <EntityType Name="ZEPTD_CDSType">
                 <Key>
-                    <PropertyRef Name="DeliveryDocument"/>
+                    <PropertyRef Name="DeliveryDocument" />
                 </Key>
-                <Property Name="DeliveryDocument" Type="Edm.String" Nullable="false" MaxLength="10"/>
-                <Property Name="SalesOrganization" Type="Edm.String" Nullable="false" MaxLength="4"/>
-                <Property Name="CreationDate" Type="Edm.Date"/>
-                <Property Name="Product" Type="Edm.String" Nullable="false" MaxLength="18"/>
-                <Property Name="DeliveryDocumentItemText" Type="Edm.String" Nullable="false" MaxLength="40"/>
-                <Property Name="Batch" Type="Edm.String" Nullable="false" MaxLength="10"/>
-                <Property Name="ActualDeliveryQuantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
-                <Property Name="DeliveryQuantityUnit" Type="Edm.String" Nullable="false" MaxLength="3"/>
-                <Property Name="ItemNetWeight" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="3"/>
-                <Property Name="ItemGrossWeight" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="3"/>
-                <Property Name="ItemWeightUnit" Type="Edm.String" Nullable="false" MaxLength="3"/>
-                <Property Name="ItemVolume" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="3"/>
-                <Property Name="ItemVolumeUnit" Type="Edm.String" Nullable="false" MaxLength="3"/>
-                <Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4"/>
-                <Property Name="StorageLocation" Type="Edm.String" Nullable="false" MaxLength="4"/>
-                <Property Name="ReferenceSDDocument" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="DeliveryDocument" Type="Edm.String" Nullable="false" MaxLength="10" />
+                <Property Name="SalesOrganization" Type="Edm.String" Nullable="false" MaxLength="4" />
+                <Property Name="CreationDate" Type="Edm.Date" />
+                <Property Name="Product" Type="Edm.String" Nullable="false" MaxLength="18" />
+                <Property Name="DeliveryDocumentItemText" Type="Edm.String" Nullable="false" MaxLength="40" />
+                <Property Name="Batch" Type="Edm.String" Nullable="false" MaxLength="10" />
+                <Property Name="ActualDeliveryQuantity" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" />
+                <Property Name="DeliveryQuantityUnit" Type="Edm.String" Nullable="false" MaxLength="3" />
+                <Property Name="ItemNetWeight" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="3" />
+                <Property Name="ItemGrossWeight" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="3" />
+                <Property Name="ItemWeightUnit" Type="Edm.String" Nullable="false" MaxLength="3" />
+                <Property Name="ItemVolume" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="3" />
+                <Property Name="ItemVolumeUnit" Type="Edm.String" Nullable="false" MaxLength="3" />
+                <Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4" />
+                <Property Name="StorageLocation" Type="Edm.String" Nullable="false" MaxLength="4" />
+                <Property Name="ReferenceSDDocument" Type="Edm.String" Nullable="false" MaxLength="10" />
             </EntityType>
             <EntityContainer Name="Container">
-                <EntitySet Name="ZEPTD_CDS" EntityType="com.sap.gateway.srvd.zeptd_srv_def.v0001.ZEPTD_CDSType"/>
+                <EntitySet Name="ZEPTD_CDS" EntityType="com.sap.gateway.srvd.zeptd_srv_def.v0001.ZEPTD_CDSType" />
             </EntityContainer>
             <Annotations Target="SAP__self.ZEPTD_CDSType/DeliveryDocument">
-                <Annotation Term="SAP__common.IsUpperCase"/>
-                <Annotation Term="SAP__common.Label" String="Delivery"/>
+                <Annotation Term="SAP__common.IsUpperCase" />
+                <Annotation Term="SAP__common.Label" String="Delivery" />
             </Annotations>
             <Annotations Target="SAP__self.ZEPTD_CDSType/SalesOrganization">
-                <Annotation Term="SAP__common.IsUpperCase"/>
-                <Annotation Term="SAP__common.Label" String="Sales Organization"/>
-                <Annotation Term="SAP__common.Heading" String="SOrg."/>
+                <Annotation Term="SAP__common.IsUpperCase" />
+                <Annotation Term="SAP__common.Label" String="Sales Organization" />
+                <Annotation Term="SAP__common.Heading" String="SOrg." />
             </Annotations>
             <Annotations Target="SAP__self.ZEPTD_CDSType/Product">
-                <Annotation Term="SAP__common.IsUpperCase"/>
-                <Annotation Term="SAP__common.Label" String="Product"/>
-                <Annotation Term="SAP__common.QuickInfo" String="Product Number"/>
+                <Annotation Term="SAP__common.IsUpperCase" />
+                <Annotation Term="SAP__common.Label" String="Product" />
+                <Annotation Term="SAP__common.QuickInfo" String="Product Number" />
             </Annotations>
             <Annotations Target="SAP__self.ZEPTD_CDSType/Batch">
-                <Annotation Term="SAP__common.IsUpperCase"/>
-                <Annotation Term="SAP__common.Label" String="Batch"/>
-                <Annotation Term="SAP__common.QuickInfo" String="Batch Number"/>
+                <Annotation Term="SAP__common.IsUpperCase" />
+                <Annotation Term="SAP__common.Label" String="Batch" />
+                <Annotation Term="SAP__common.QuickInfo" String="Batch Number" />
             </Annotations>
             <Annotations Target="SAP__self.ZEPTD_CDSType/ActualDeliveryQuantity">
-                <Annotation Term="SAP__measures.Unit" Path="DeliveryQuantityUnit"/>
-                <Annotation Term="SAP__common.Label" String="Delivery Quantity"/>
-                <Annotation Term="SAP__common.QuickInfo" String="Actual quantity delivered (in sales units)"/>
+                <Annotation Term="SAP__measures.Unit" Path="DeliveryQuantityUnit" />
+                <Annotation Term="SAP__common.Label" String="Delivery Quantity" />
+                <Annotation Term="SAP__common.QuickInfo" String="Actual quantity delivered (in sales units)" />
             </Annotations>
             <Annotations Target="SAP__self.ZEPTD_CDSType/DeliveryQuantityUnit">
-                <Annotation Term="SAP__common.IsUnit"/>
-                <Annotation Term="SAP__common.Label" String="Sales Unit"/>
-                <Annotation Term="SAP__common.Heading" String="SU"/>
+                <Annotation Term="SAP__common.IsUnit" />
+                <Annotation Term="SAP__common.Label" String="Sales Unit" />
+                <Annotation Term="SAP__common.Heading" String="SU" />
             </Annotations>
             <Annotations Target="SAP__self.ZEPTD_CDSType/ItemNetWeight">
-                <Annotation Term="SAP__measures.Unit" Path="ItemWeightUnit"/>
-                <Annotation Term="SAP__common.Label" String="Net Weight"/>
+                <Annotation Term="SAP__measures.Unit" Path="ItemWeightUnit" />
+                <Annotation Term="SAP__common.Label" String="Net Weight" />
             </Annotations>
             <Annotations Target="SAP__self.ZEPTD_CDSType/ItemGrossWeight">
-                <Annotation Term="SAP__measures.Unit" Path="ItemWeightUnit"/>
-                <Annotation Term="SAP__common.Label" String="Gross Weight"/>
+                <Annotation Term="SAP__measures.Unit" Path="ItemWeightUnit" />
+                <Annotation Term="SAP__common.Label" String="Gross Weight" />
             </Annotations>
             <Annotations Target="SAP__self.ZEPTD_CDSType/ItemWeightUnit">
-                <Annotation Term="SAP__common.IsUnit"/>
-                <Annotation Term="SAP__common.Label" String="Unit of Weight"/>
-                <Annotation Term="SAP__common.Heading" String="WUn"/>
+                <Annotation Term="SAP__common.IsUnit" />
+                <Annotation Term="SAP__common.Label" String="Unit of Weight" />
+                <Annotation Term="SAP__common.Heading" String="WUn" />
             </Annotations>
             <Annotations Target="SAP__self.ZEPTD_CDSType/ItemVolume">
-                <Annotation Term="SAP__measures.Unit" Path="ItemVolumeUnit"/>
-                <Annotation Term="SAP__common.Label" String="Volume"/>
+                <Annotation Term="SAP__measures.Unit" Path="ItemVolumeUnit" />
+                <Annotation Term="SAP__common.Label" String="Volume" />
             </Annotations>
             <Annotations Target="SAP__self.ZEPTD_CDSType/ItemVolumeUnit">
-                <Annotation Term="SAP__common.IsUnit"/>
-                <Annotation Term="SAP__common.Label" String="Volume Unit"/>
-                <Annotation Term="SAP__common.Heading" String="VUn"/>
+                <Annotation Term="SAP__common.IsUnit" />
+                <Annotation Term="SAP__common.Label" String="Volume Unit" />
+                <Annotation Term="SAP__common.Heading" String="VUn" />
             </Annotations>
             <Annotations Target="SAP__self.ZEPTD_CDSType/Plant">
-                <Annotation Term="SAP__common.IsUpperCase"/>
-                <Annotation Term="SAP__common.Label" String="Plant"/>
-                <Annotation Term="SAP__common.Heading" String="Plnt"/>
+                <Annotation Term="SAP__common.IsUpperCase" />
+                <Annotation Term="SAP__common.Label" String="Plant" />
+                <Annotation Term="SAP__common.Heading" String="Plnt" />
             </Annotations>
             <Annotations Target="SAP__self.ZEPTD_CDSType/StorageLocation">
-                <Annotation Term="SAP__common.IsUpperCase"/>
-                <Annotation Term="SAP__common.Label" String="Storage Location"/>
+                <Annotation Term="SAP__common.IsUpperCase" />
+                <Annotation Term="SAP__common.Label" String="Storage Location" />
             </Annotations>
             <Annotations Target="SAP__self.ZEPTD_CDSType/ReferenceSDDocument">
-                <Annotation Term="SAP__common.IsUpperCase"/>
-                <Annotation Term="SAP__common.Label" String="Reference Document"/>
-                <Annotation Term="SAP__common.Heading" String="Ref. Doc."/>
-                <Annotation Term="SAP__common.QuickInfo" String="Document Number of Reference Document"/>
+                <Annotation Term="SAP__common.IsUpperCase" />
+                <Annotation Term="SAP__common.Label" String="Reference Document" />
+                <Annotation Term="SAP__common.Heading" String="Ref. Doc." />
+                <Annotation Term="SAP__common.QuickInfo" String="Document Number of Reference Document" />
             </Annotations>
             <Annotations Target="SAP__self.ZEPTD_CDSType">
-                <Annotation Term="SAP__common.Label" String="CDS View with data for E-PTD"/>
+                <Annotation Term="SAP__common.Label" String="CDS View with data for E-PTD" />
             </Annotations>
             <Annotations Target="SAP__self.Container/ZEPTD_CDS">
                 <Annotation Term="SAP__capabilities.SearchRestrictions">
                     <Record>
-                        <PropertyValue Property="Searchable" Bool="false"/>
+                        <PropertyValue Property="Searchable" Bool="false" />
                     </Record>
                 </Annotation>
                 <Annotation Term="SAP__capabilities.InsertRestrictions">
                     <Record>
-                        <PropertyValue Property="Insertable" Bool="false"/>
+                        <PropertyValue Property="Insertable" Bool="false" />
                     </Record>
                 </Annotation>
                 <Annotation Term="SAP__capabilities.DeleteRestrictions">
                     <Record>
-                        <PropertyValue Property="Deletable" Bool="false"/>
+                        <PropertyValue Property="Deletable" Bool="false" />
                     </Record>
                 </Annotation>
                 <Annotation Term="SAP__capabilities.UpdateRestrictions">
                     <Record>
-                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="Updatable" Bool="false" />
                         <PropertyValue Property="QueryOptions">
                             <Record>
-                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                                <PropertyValue Property="SelectSupported" Bool="true" />
                             </Record>
                         </PropertyValue>
                     </Record>
                 </Annotation>
                 <Annotation Term="SAP__core.OptimisticConcurrency">
-                    <Collection/>
+                    <Collection />
                 </Annotation>
                 <Annotation Term="SAP__capabilities.FilterRestrictions">
                     <Record>
                         <PropertyValue Property="FilterExpressionRestrictions">
                             <Collection>
                                 <Record>
-                                    <PropertyValue Property="Property" PropertyPath="ActualDeliveryQuantity"/>
-                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                    <PropertyValue Property="Property" PropertyPath="ActualDeliveryQuantity" />
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue" />
                                 </Record>
                                 <Record>
-                                    <PropertyValue Property="Property" PropertyPath="ItemNetWeight"/>
-                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                    <PropertyValue Property="Property" PropertyPath="ItemNetWeight" />
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue" />
                                 </Record>
                                 <Record>
-                                    <PropertyValue Property="Property" PropertyPath="ItemGrossWeight"/>
-                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                    <PropertyValue Property="Property" PropertyPath="ItemGrossWeight" />
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue" />
                                 </Record>
                                 <Record>
-                                    <PropertyValue Property="Property" PropertyPath="ItemVolume"/>
-                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                    <PropertyValue Property="Property" PropertyPath="ItemVolume" />
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue" />
                                 </Record>
                             </Collection>
                         </PropertyValue>
@@ -198,8 +198,8 @@
             <Annotations Target="SAP__self.Container">
                 <Annotation Term="SAP__CodeList.UnitsOfMeasure">
                     <Record>
-                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
-                        <PropertyValue Property="CollectionPath" String="UnitsOfMeasure"/>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata" />
+                        <PropertyValue Property="CollectionPath" String="UnitsOfMeasure" />
                     </Record>
                 </Annotation>
                 <Annotation Term="SAP__aggregation.ApplySupported">
@@ -211,10 +211,10 @@
                                 <String>filter</String>
                             </Collection>
                         </PropertyValue>
-                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None" />
                     </Record>
                 </Annotation>
-                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true" />
                 <Annotation Term="SAP__capabilities.FilterFunctions">
                     <Collection>
                         <String>eq</String>
@@ -240,34 +240,34 @@
                 </Annotation>
                 <Annotation Term="SAP__PDF.Features">
                     <Record>
-                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
-                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
-                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
-                        <PropertyValue Property="Border" Bool="true"/>
-                        <PropertyValue Property="CoverPage" Bool="true"/>
-                        <PropertyValue Property="FitToPage" Bool="true"/>
-                        <PropertyValue Property="FontName" Bool="true"/>
-                        <PropertyValue Property="FontSize" Bool="true"/>
-                        <PropertyValue Property="Margin" Bool="true"/>
-                        <PropertyValue Property="Padding" Bool="true"/>
-                        <PropertyValue Property="Signature" Bool="true"/>
-                        <PropertyValue Property="HeaderFooter" Bool="true"/>
-                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
-                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
-                        <PropertyValue Property="IANATimezoneFormat" Bool="true"/>
-                        <PropertyValue Property="Treeview" Bool="true"/>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata" />
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions" />
+                        <PropertyValue Property="ArchiveFormat" Bool="true" />
+                        <PropertyValue Property="Border" Bool="true" />
+                        <PropertyValue Property="CoverPage" Bool="true" />
+                        <PropertyValue Property="FitToPage" Bool="true" />
+                        <PropertyValue Property="FontName" Bool="true" />
+                        <PropertyValue Property="FontSize" Bool="true" />
+                        <PropertyValue Property="Margin" Bool="true" />
+                        <PropertyValue Property="Padding" Bool="true" />
+                        <PropertyValue Property="Signature" Bool="true" />
+                        <PropertyValue Property="HeaderFooter" Bool="true" />
+                        <PropertyValue Property="ResultSizeDefault" Int="20000" />
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000" />
+                        <PropertyValue Property="IANATimezoneFormat" Bool="true" />
+                        <PropertyValue Property="Treeview" Bool="true" />
                     </Record>
                 </Annotation>
-                <Annotation Term="SAP__capabilities.KeyAsSegmentSupported"/>
-                <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported"/>
+                <Annotation Term="SAP__capabilities.KeyAsSegmentSupported" />
+                <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported" />
             </Annotations>
             <Annotations Target="SAP__self.ZEPTD_CDSType/CreationDate">
-                <Annotation Term="SAP__common.Label" String="Created On"/>
-                <Annotation Term="SAP__common.QuickInfo" String="Record Creation Date"/>
+                <Annotation Term="SAP__common.Label" String="Created On" />
+                <Annotation Term="SAP__common.QuickInfo" String="Record Creation Date" />
             </Annotations>
             <Annotations Target="SAP__self.ZEPTD_CDSType/DeliveryDocumentItemText">
-                <Annotation Term="SAP__common.Label" String="Item Description"/>
-                <Annotation Term="SAP__common.QuickInfo" String="Short Text for Sales Order Item"/>
+                <Annotation Term="SAP__common.Label" String="Item Description" />
+                <Annotation Term="SAP__common.QuickInfo" String="Short Text for Sales Order Item" />
             </Annotations>
         </Schema>
     </edmx:DataServices>
