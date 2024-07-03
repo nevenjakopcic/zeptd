@@ -46,6 +46,12 @@ sap.ui.define([
                 File.save(content, "zeptd", "xml");
             },
 
+            onCloseDetailPress: function () {
+                this.getModel("appView").setProperty("/actionButtonsInfo/midColumn/fullscreen", false);
+                this.getOwnerComponent().listSelector.clearMasterListSelection();
+                this.getRouter().navTo("master");
+            },
+
             /* =========================================================== */
             /* internal methods                                            */
             /* =========================================================== */

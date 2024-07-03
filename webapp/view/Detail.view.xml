@@ -31,6 +31,12 @@
                         type="Emphasized"
                         press="onDownloadPress"/>
                 </f:actions>
+                <f:navigationActions>
+                    <Button
+                        icon="sap-icon://decline"
+                        type="Transparent"
+                        press="onCloseDetailPress"/>
+                </f:navigationActions>
             </f:DynamicPageTitle>
         </f:title>
         <f:content>
