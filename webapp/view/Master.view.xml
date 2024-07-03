@@ -15,7 +15,7 @@
                 id="listHeaderTitle"
                 text="{
                     parts: [
-                        'i18n>listTitleCount',
+                        'i18n>masterTitleCount',
                         'masterView>/titleCount'
                     ],
                     formatter: 'formatMessage'

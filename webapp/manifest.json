@@ -11,22 +11,12 @@
         "description": "{{appDescription}}",
         "resources": "resources.json",
         "dataSources": {
-            "mainService": {
-                "uri": "/sap/opu/odata4/sap/zeptd_srv_bind/srvd/sap/zeptd_srv_def/0001/",
+            "ZEPTD_SRV_BIND1": {
+                "uri": "/sap/opu/odata/sap/ZEPTD_SRV_BIND",
                 "type": "OData",
                 "settings": {
-                    "annotations": [
-                        "annotation"
-                    ],
                     "localUri": "localService/metadata.xml",
-                    "odataVersion": "4.0"
-                }
-            },
-            "annotation": {
-                "type": "ODataAnnotation",
-                "uri": "annotations/annotation.xml",
-                "settings": {
-                    "localUri": "annotations/annotation.xml"
+                    "odataVersion": "2.0"
                 }
             }
         },
@@ -68,7 +58,7 @@
             "id": "app"
         },
         "dependencies": {
-            "minUI5Version": "1.124.0",
+            "minUI5Version": "1.125.0",
             "libs": {
                 "sap.f": {},
                 "sap.m": {},
@@ -86,18 +76,21 @@
                     "bundleName": "hr.axians.zeptd.i18n.i18n"
                 }
             },
-            "": {
-                "dataSource": "mainService",
-                "preload": true,
-                "settings": {
-                    "operationMode": "Server",
-                    "autoExpandSelect": true,
-                    "earlyRequests": true
-                }
-            },
             "@i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "uri": "i18n/i18n.properties"
+            },
+            "": {
+                "dataSource": "ZEPTD_SRV_BIND1",
+                "preload": true,
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": false,
+                    "metadataUrlParams": {
+                        "sap-value-list": "none"
+                    }
+                }
             }
         },
         "resources": {
