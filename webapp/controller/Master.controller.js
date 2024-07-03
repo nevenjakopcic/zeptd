@@ -264,7 +264,7 @@ sap.ui.define([
 
                 //set the layout property of FCL control to show two columns
                 this.getModel("appView").setProperty("/layout", "TwoColumnsMidExpanded");
-                this.getRouter().navTo("object", {
+                this.getRouter().navTo("eptddetails", {
                     objectId: item.getBindingContext().getProperty("DeliveryDocument")
                 }, replace);
             },

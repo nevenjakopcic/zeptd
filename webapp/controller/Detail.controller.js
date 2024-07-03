@@ -19,6 +19,12 @@ sap.ui.define([
                     busy: false,
                     delay: 0,
                     lineItemListTitle: this.getResourceBundle().getText("detailLineItemTableHeading"),
+                    xml: `<note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+</note>`,
                     currency: "EUR"
                 });
 
@@ -35,7 +41,7 @@ sap.ui.define([
 
             _onObjectMatched: function (event) {
                 let _arguments = event.getParameter("arguments");
-                this._objectId = arguments.objectId;
+                this._objectId = _arguments.objectId;
 
                 // Don't show two columns when in fullscreen mode
                 if (this.getModel("appView").getProperty("/layout") !== "MidColumnFullScreen") {
@@ -43,7 +49,7 @@ sap.ui.define([
                 }
 
                 this.getModel().metadataLoaded().then( function () {
-                    let objectPath = this.getModel().createKey("EPTD", {
+                    let objectPath = this.getModel().createKey("ZEPTD_CDS", {
                         DeliveryDocument: this._objectId
                     });
                     this._bindView("/" + objectPath);

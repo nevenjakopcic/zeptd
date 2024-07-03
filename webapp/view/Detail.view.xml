@@ -1,37 +1,38 @@
 <mvc:View controllerName="hr.axians.zeptd.controller.Detail"
-    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:semantic="sap.f.semantic"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns:ux="sap.uxap"
-    xmlns:layout="sap.ui.layout"
-    xmlns="sap.m">
-    <ux:ObjectPageLayout id="objectPageLayout">
-        <ux:headerTitle>
-            <ux:ObjectPageDynamicHeaderTitle id="objectPageDynamicHeader">
-                <ux:expandedHeading>
-                    <Title
-                        id="title1"
-                        text="{DeliveryDocument}"
-                        level="H2" />
-                </ux:expandedHeading>
-            </ux:ObjectPageDynamicHeaderTitle>
-        </ux:headerTitle>
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:codeEditor="sap.ui.codeeditor">
+    <semantic:SemanticPage id="page"
+        busy="{detailView>/busy}"
+        busyIndicatorDelay="{detailView>delay}"
+        core:require="{
+            formatMessage: 'sap/base/strings/formatMessage',
+            DateType: 'sap/ui/model/type/Date'
+        }">
+        <semantic:titleHeading>
+            <Title
+                text="{
+                    parts: [
+                        'i18n>commonItemTitle',
+                        'DeliveryDocument'
+                    ],
+                    formatter: 'formatMessage'
+                }"
+            />
+        </semantic:titleHeading>
+        <semantic:headerContent>
 
-        <ux:headerContent>
-            <FlexBox id="flexBox" wrap="Wrap">
-                <Avatar id="avatar" src="sap-icon://flight" />
-                <layout:VerticalLayout id="verticalLayout1" class="sapUiSmallMarginBeginEnd">
-                    <Label id="label1" text="{DeliveryDocument}" />
-                    <Label id="label2" text="{CreationDate}" />
-                </layout:VerticalLayout>
-            </FlexBox>
-        </ux:headerContent>
-
-        <ux:sections>
-            <ux:ObjectPageSection id="objectPageSection">
-                <ux:ObjectPageSubSection id="objectPageSubSection1">
-                    
-                </ux:ObjectPageSubSection>
-            </ux:ObjectPageSection>
-        </ux:sections>
-    </ux:ObjectPageLayout>
+        </semantic:headerContent>
+        <semantic:content>
+            <codeEditor:CodeEditor id="codeeditor"
+                editable="false"
+                type="xml"
+                value="{detailView>/xml}"
+                height="300px"
+            />
+        </semantic:content>
+    </semantic:SemanticPage>
 </mvc:View>

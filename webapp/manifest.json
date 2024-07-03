@@ -131,7 +131,7 @@
                     "level": 1
                 },
                 "eptddetails": {
-                    "name": "EPTDDetails",
+                    "name": "Detail",
                     "id": "eptddetails",
                     "level": 1,
                     "controlAggregation": "midColumnPages"
