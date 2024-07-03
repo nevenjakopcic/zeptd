@@ -1,9 +1,10 @@
 sap.ui.define([
         "./BaseController",
         "sap/ui/model/json/JSONModel",
+        "sap/ui/core/util/File",
         "../model/formatter"
     ],
-    function (BaseController, JSONModel, formatter) {
+    function (BaseController, JSONModel, File, formatter) {
         "use strict";
 
         return BaseController.extend("hr.axians.zeptd.controller.Detail", {
@@ -34,9 +35,19 @@ sap.ui.define([
 
                 this.getOwnerComponent().getModel().metadataLoaded().then(this._onMetadataLoaded.bind(this));
             },
+            
+            /* =========================================================== */
+            /* event handlers                                              */
+            /* =========================================================== */
+
+            onDownloadPress: function () {
+                let content = this.getModel("detailView").getProperty("/xml");
+
+                File.save(content, "zeptd", "xml");
+            },
 
             /* =========================================================== */
-            /* lifecycle methods                                           */
+            /* internal methods                                            */
             /* =========================================================== */
 
             _onObjectMatched: function (event) {

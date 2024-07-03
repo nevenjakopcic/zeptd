@@ -1,38 +1,45 @@
 <mvc:View controllerName="hr.axians.zeptd.controller.Detail"
     xmlns="sap.m"
-    xmlns:semantic="sap.f.semantic"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
     xmlns:core="sap.ui.core"
-    xmlns:l="sap.ui.layout"
+    xmlns:layout="sap.ui.layout"
     xmlns:codeEditor="sap.ui.codeeditor">
-    <semantic:SemanticPage id="page"
+    <f:DynamicPage id="page"
         busy="{detailView>/busy}"
         busyIndicatorDelay="{detailView>delay}"
         core:require="{
             formatMessage: 'sap/base/strings/formatMessage',
             DateType: 'sap/ui/model/type/Date'
         }">
-        <semantic:titleHeading>
-            <Title
-                text="{
-                    parts: [
-                        'i18n>commonItemTitle',
-                        'DeliveryDocument'
-                    ],
-                    formatter: 'formatMessage'
-                }"
-            />
-        </semantic:titleHeading>
-        <semantic:headerContent>
-
-        </semantic:headerContent>
-        <semantic:content>
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title
+                        text="{
+                            parts: [
+                                'i18n>commonItemTitle',
+                                'DeliveryDocument'
+                            ],
+                            formatter: 'formatMessage'
+                        }"
+                    />
+                </f:heading>
+                <f:actions>
+                    <Button
+                        text="{i18n>downloadButtonText}"
+                        type="Emphasized"
+                        press="onDownloadPress"/>
+                </f:actions>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:content>
             <codeEditor:CodeEditor id="codeeditor"
                 editable="false"
                 type="xml"
                 value="{detailView>/xml}"
-                height="300px"
+                height="100%"
             />
-        </semantic:content>
-    </semantic:SemanticPage>
+        </f:content>
+    </f:DynamicPage>
 </mvc:View>
