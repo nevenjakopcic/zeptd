@@ -2,9 +2,10 @@ sap.ui.define([
         "./BaseController",
         "sap/ui/model/json/JSONModel",
         "sap/ui/core/util/File",
-        "../model/formatter"
+        "../model/formatter",
+        "./XmlGenerator"
     ],
-    function (BaseController, JSONModel, File, formatter) {
+    function (BaseController, JSONModel, File, formatter, XmlGenerator) {
         "use strict";
 
         return BaseController.extend("hr.axians.zeptd.controller.Detail", {
@@ -20,12 +21,7 @@ sap.ui.define([
                     busy: false,
                     delay: 0,
                     lineItemListTitle: this.getResourceBundle().getText("detailLineItemTableHeading"),
-                    xml: `<note>
-    <to>Tove</to>
-    <from>Jani</from>
-    <heading>Reminder</heading>
-    <body>Don't forget me this weekend!</body>
-</note>`,
+                    xml: "test",
                     currency: "EUR"
                 });
 
@@ -92,7 +88,7 @@ sap.ui.define([
                 });
             },
 
-            _onBindingChange: function () { // TODO
+            _onBindingChange: function () {
                 let view = this.getView();
                 let elementBinding = view.getElementBinding();
 
@@ -105,6 +101,9 @@ sap.ui.define([
 
                 let path = elementBinding.getPath();
                 this.getOwnerComponent().listSelector.selectAListItem(path);
+
+                let xml = XmlGenerator.generate();
+                this.getModel("detailView").setProperty("/xml", xml);
             },
 
             _onMetadataLoaded: function () {

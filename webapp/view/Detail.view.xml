@@ -29,13 +29,15 @@
                     <Button
                         text="{i18n>downloadButtonText}"
                         type="Emphasized"
-                        press="onDownloadPress"/>
+                        press="onDownloadPress"
+                        tooltip="{i18n>downloadButtonTooltip}"/>
                 </f:actions>
                 <f:navigationActions>
                     <Button
                         icon="sap-icon://decline"
                         type="Transparent"
-                        press="onCloseDetailPress"/>
+                        press="onCloseDetailPress"
+                        tooltip="{i18n>closeButtonTooltip}"/>
                 </f:navigationActions>
             </f:DynamicPageTitle>
         </f:title>
