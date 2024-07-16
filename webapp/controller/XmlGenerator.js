@@ -8,100 +8,637 @@ sap.ui.define([
     return {
         generate: function () {
             let json = this.baseJsonTemplate();
+            
 
-            return js2xml(json, { compact: true, ignoreComment: true, spaces: 4 });
+            let xml = js2xml(json, { compact: false, ignoreComment: true, spaces: 4 });
+            return xml;
         },
 
         baseJsonTemplate: function () {
             return {
-                "_declaration": {
-                    "_attributes": {
+                "declaration": {
+                    "attributes": {
                         "version": "1.0",
                         "encoding": "UTF-8",
                         "standalone": "yes"
                     }
                 },
-                "ns2:IE815": {
-                    "_attributes": {
-                        "xmlns": "urn:publicid:-:EC:DGTAXUD:EMCS:PHASE4:TMS:V3.13",
-                        "xmlns:ns2": "urn:publicid:-:EC:DGTAXUD:EMCS:PHASE4:IE815:V3.13"
+                "elements": [
+                    {
+                        "type": "element",
+                        "name": "ns2:IE815",
+                        "attributes": {
+                            "xmlns": "urn:publicid:-:EC:DGTAXUD:EMCS:PHASE4:TMS:V3.13",
+                            "xmlns:ns2": "urn:publicid:-:EC:DGTAXUD:EMCS:PHASE4:IE815:V3.13"
+                        },
+                        "elements": [
+                            {
+                                "type": "element",
+                                "name": "ns2:Header",
+                                "elements": [
+                                    {
+                                        "type": "element",
+                                        "name": "MessageSender",
+                                        "elements": [
+                                            {
+                                                "type": "text",
+                                                "text": "NDEA.HR"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "element",
+                                        "name": "MessageRecipient",
+                                        "elements": [
+                                            {
+                                                "type": "text",
+                                                "text": "NDEA.HR"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "element",
+                                        "name": "DateOfPreparation",
+                                        "elements": [
+                                            {
+                                                "type": "text",
+                                                "text": DateFormat.getDateInstance({ pattern: "yyyy-MM-dd" }).format(UI5Date.getInstance())
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "element",
+                                        "name": "TimeOfPreparation",
+                                        "elements": [
+                                            {
+                                                "type": "text",
+                                                "text": DateFormat.getDateInstance({ pattern: "yyyy-MM-dd HH:mm:ss" }).format(UI5Date.getInstance())
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "element",
+                                        "name": "MessageIdentifier",
+                                        "elements": [
+                                            {
+                                                "type": "text",
+                                                "text": this.uuidv4()
+                                            }
+                                        ]
+                                    },
+                                ]
+                            },
+                            {
+                                "type": "element",
+                                "name": "ns2:Body",
+                                "elements": [
+                                    {
+                                        "type": "element",
+                                        "name": "ns2:SubmittedDraftOfEAD",
+                                        "elements": [
+                                            {
+                                                "type": "element",
+                                                "name": "ns2:Attributes",
+                                                "elements": [
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:SubmissionMessageType",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:DeferredSubmissionFlag",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "0"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "element",
+                                                "name": "ns2:ConsigneeTrader",
+                                                "attributes": {
+                                                    "language": "hr"
+                                                },
+                                                "elements": [
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:Traderid",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": ""
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:TraderName",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:StreetName",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:StreetNumber",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:Postcode",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:City",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                ]
+                                            },
+                                            {
+                                                "type": "element",
+                                                "name": "ns2:ConsignorTrader",
+                                                "attributes": {
+                                                    "language": "hr"
+                                                },
+                                                "elements": [
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:TraderExciseNumber",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": ""
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:TraderName",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:StreetName",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:StreetNumber",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:Postcode",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:City",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "element",
+                                                "name": "ns2:PlaceOfDispatchTrader",
+                                                "attributes": {
+                                                    "language": "hr"
+                                                },
+                                                "elements": [
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:ReferenceOfTaxWarehouse",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": ""
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:TraderName",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:StreetName",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:StreetNumber",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:Postcode",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:City",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "element",
+                                                "name": "ns2:DispatchImportOffice"
+                                            },
+                                            {
+                                                "type": "element",
+                                                "name": "ns2:ComplementConsigneeTrader"
+                                            },
+                                            {
+                                                "type": "element",
+                                                "name": "ns2:DeliveryPlaceTrader",
+                                                "attributes": {
+                                                    "language": "hr"
+                                                },
+                                                "elements": [
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:Traderid",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": ""
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:TraderName",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:StreetName",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:StreetNumber",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:Postcode",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:City",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "element",
+                                                "name": "ns2:DeliveryPlaceCustomsOffice"
+                                            },
+                                            {
+                                                "type": "element",
+                                                "name": "ns2:CompetentAuthorityDispatchOffice",
+                                                "elements": [
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:ReferenceNumber",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "element",
+                                                "name": "ns2:HeaderEad",
+                                                "elements": [
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:DestinationTypeCode",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:JourneyTime",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:TransportArrangement",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "element",
+                                                "name": "ns2:TransportMode",
+                                                "elements": [
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:TransportModeCode",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": ""
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:ComplementaryInformation",
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "element",
+                                                "name": "ns2:MovementGuarantee",
+                                                "elements": [
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:GuarantorTypeCode",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            this.bodyEadJsonTemplate(),
+                                            this.bodyEadJsonTemplate()
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
                     },
-                    "ns2:Header": {
-                        "MessageSender": "", // TODO
-                        "MessageRecipient": "", // TODO
-                        "DateOfPreparation": DateFormat.getDateInstance({ pattern: "yyyy-MM-dd" }).format(UI5Date.getInstance()),
-                        "TimeOfPreparation": DateFormat.getDateInstance({ pattern: "yyyy-MM-dd HH:mm:ss" }).format(UI5Date.getInstance()),
-                        "MessageIdentifier": this.uuidv4()
-                    },
-                    "ns2:Body": {
-                        "ns2:Attributes": {
-                            "ns2:SubmissionMessageType": "1",
-                            "ns2:DeferredSubmissionFlag": "0"
-                        },
-                        "ns2:ConsigneeTrader": {
-                            "_attributes": {
-                                "language": "hr"
-                            },
-                            "ns2:Traderid": "", // TODO
-                            "ns2:TraderName": "", // TODO
-                            "ns2:StreetName": "", // TODO
-                            "ns2:Postcode": "", // TODO
-                            "ns2:City": "" // TODO
-                        },
-                        "ns2:ConsignorTrader": {
-                            "_attributes": {
-                                "language": "hr"
-                            },
-                            "ns2:TraderExciseNumber": "", // TODO
-                            "ns2:TraderName": "", // TODO
-                            "ns2:StreetName": "", // TODO
-                            "ns2:StreetNumber": "", // TODO
-                            "ns2:Postcode": "", // TODO
-                            "ns2:City": "", // TODO
-                        },
-                        "ns2:PlaceOfDispatchTrader": {
-                            "_attributes": {
-                                "language": "hr"
-                            },
-                            "ns2:ReferenceOfTaxWarehouse": "", // TODO
-                            "ns2:TraderName": "", // TODO
-                            "ns2:StreetName": "", // TODO
-                            "ns2:StreetNumber": "", // TODO
-                            "ns2:Postcode": "", // TODO
-                            "ns2:City": "", // TODO
-                        },
-                        "ns2:DispatchImportOffice": {},
-                        "ns2:ComplementConsigneeTrader": {},
-                        "ns2:DeliveryPlaceCustomsOffice": {},
-                        "ns2:CompetentAuthorityDispatchOffice": {
-                            "ns2:ReferenceNumber": "" // TODO
-                        },
-                        "ns2:DocumentCertificate": {
-                            "ns2:DocumentType": "3", // TODO check this
-                            "ns2:DocumentReference": "" // TODO
-                        },
-                        "ns2:HeaderEad": {
-                            "ns2:DestinationTypeCode": "99", // TODO check this
-                            "ns2:JourneyTime": "", // TODO
-                            "ns2:TransportArrangement": "1", // TODO check this
-                        },
-                        "ns2:TransportMode": {
-                            "ns2:TransportModeCode": "3", // TODO check this
-                            "ns2:ComplementaryInformation": {}
-                        },
-                        "ns2:MovementGuarantee": {
-                            "ns2:GuarantorTypeCode": "1" // TODO check this
-                        }
-                    }
-                }
+                ]
             }
         },
 
         bodyEadJsonTemplate: function () {
             return {
-                "ns2:BodyEad": {
-                    
-                }
+                "type": "element",
+                "name": "ns2:BodyEad",
+                "elements": [
+                    {
+                        "type": "element",
+                        "name": "ns2:BodyRecordUniqueReference",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "1"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "element",
+                        "name": "ns2:ExciseProductCode",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "1"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "element",
+                        "name": "ns2:CnCode",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "1"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "element",
+                        "name": "ns2:Quantity",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "1"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "element",
+                        "name": "ns2:GrossWeight",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "1"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "element",
+                        "name": "ns2:NetWeight",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "1"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "element",
+                        "name": "ns2:AlcoholicStrength",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "1"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "element",
+                        "name": "ns2:FiscalMarkUsedFlag",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "1"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "element",
+                        "name": "ns2:CommercialDescription",
+                        "attributes": {
+                            "language": "hr"
+                        },
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "1"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "element",
+                        "name": "ns2:Package",
+                        "elements": [
+                            {
+                                "type": "element",
+                                "name": "ns2:KindOfPackages",
+                                "elements": [
+                                    {
+                                        "type": "text",
+                                        "text": "1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "element",
+                                "name": "ns2:NumberOfPackages",
+                                "elements": [
+                                    {
+                                        "type": "text",
+                                        "text": "1"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "element",
+                                "name": "ns2:SealInformation",
+                            }
+                        ]
+                    }
+                ]
             }
         },
 
