@@ -34,6 +34,18 @@
                 </f:actions>
                 <f:navigationActions>
                     <Button
+                        icon="sap-icon://full-screen"
+                        type="Transparent"
+                        visible="{= !${device>/system/phone} &amp;&amp; !${appView>/actionButtonsInfo/midColumn/fullScreen}}"
+                        press="toggleFullScreen"
+                        tooltip="{i18n>fullScreenButtonTooltip}"/>
+                    <Button
+                        icon="sap-icon://exit-full-screen"
+                        type="Transparent"
+                        visible="{= !${device>/system/phone} &amp;&amp; ${appView>/actionButtonsInfo/midColumn/fullScreen}}"
+                        press="toggleFullScreen"
+                        tooltip="{i18n>exitFullScreenButtonTooltip}"/>
+                    <Button
                         icon="sap-icon://decline"
                         type="Transparent"
                         press="onCloseDetailPress"

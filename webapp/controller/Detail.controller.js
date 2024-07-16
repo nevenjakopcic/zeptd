@@ -42,6 +42,20 @@ sap.ui.define([
                 File.save(content, "zeptd", "xml");
             },
 
+            toggleFullScreen: function () {
+                let fullScreen = this.getModel("appView").getProperty("/actionButtonsInfo/midColumn/fullScreen");
+                this.getModel("appView").setProperty("/actionButtonsInfo/midColumn/fullScreen", !fullScreen);
+                if (!fullScreen) {
+                    // store current layout and go full screen
+                    this.getModel("appView").setProperty("/previousLayout", this.getModel("appView").getProperty("/layout"));
+                    this.getModel("appView").setProperty("/layout", "MidColumnFullScreen");
+                } else {
+                    // reset to previous layout
+                    this.getModel("appView").setProperty("/layout", this.getModel("appView").getProperty("/previousLayout"));
+                }
+    
+            },
+
             onCloseDetailPress: function () {
                 this.getModel("appView").setProperty("/actionButtonsInfo/midColumn/fullscreen", false);
                 this.getOwnerComponent().listSelector.clearMasterListSelection();
