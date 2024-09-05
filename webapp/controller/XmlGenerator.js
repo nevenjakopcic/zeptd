@@ -6,15 +6,15 @@ sap.ui.define([
     "use strict";
 
     return {
-        generate: function () {
-            let json = this.baseJsonTemplate();
+        generate: function (deliveryItems) {
+            let json = this.baseJsonTemplate(deliveryItems);
             
 
             let xml = js2xml(json, { compact: false, ignoreComment: true, spaces: 4 });
             return xml;
         },
 
-        baseJsonTemplate: function () {
+        baseJsonTemplate: function (deliveryItems) {
             return {
                 "declaration": {
                     "attributes": {
@@ -436,7 +436,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": "99"
                                                             }
                                                         ]
                                                     },
@@ -446,7 +446,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": "D01"
                                                             }
                                                         ]
                                                     },
@@ -472,7 +472,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": ""
+                                                                "text": "3"
                                                             }
                                                         ]
                                                     },
@@ -498,8 +498,7 @@ sap.ui.define([
                                                     }
                                                 ]
                                             },
-                                            this.bodyEadJsonTemplate(),
-                                            this.bodyEadJsonTemplate()
+                                            ...this.generateBodyEads(deliveryItems)
                                         ]
                                     }
                                 ]
@@ -510,7 +509,17 @@ sap.ui.define([
             }
         },
 
-        bodyEadJsonTemplate: function () {
+        generateBodyEads: function (deliveryItems) {
+            let bodyEads = [];
+            for (let i = 0; i < deliveryItems.length; i++) {
+                let bodyEad = this.bodyEadJsonTemplate(i, deliveryItems[i]);
+                bodyEads.push(bodyEad);
+            }
+
+            return bodyEads;
+        },
+
+        bodyEadJsonTemplate: function (index, deliveryItem) {
             return {
                 "type": "element",
                 "name": "ns2:BodyEad",
@@ -521,7 +530,7 @@ sap.ui.define([
                         "elements": [
                             {
                                 "type": "text",
-                                "text": "1"
+                                "text": index + 1
                             }
                         ]
                     },
@@ -591,7 +600,7 @@ sap.ui.define([
                         "elements": [
                             {
                                 "type": "text",
-                                "text": "1"
+                                "text": "false"
                             }
                         ]
                     },
@@ -604,7 +613,7 @@ sap.ui.define([
                         "elements": [
                             {
                                 "type": "text",
-                                "text": "1"
+                                "text": deliveryItem.ProductDescription
                             }
                         ]
                     },

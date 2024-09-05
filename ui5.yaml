@@ -19,6 +19,7 @@ server:
           - path: /sap
             url: https://my407970-api.s4hana.cloud.sap
             destination: S4HC_STARTER_DEV_SAML_ASSERTION
+            authenticationType: SAMLAssertion
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:

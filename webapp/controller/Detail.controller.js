@@ -21,7 +21,8 @@ sap.ui.define([
                     busy: false,
                     delay: 0,
                     lineItemListTitle: this.getResourceBundle().getText("detailLineItemTableHeading"),
-                    xml: "test",
+                    xml: "",
+                    deliveryItems: [],
                     currency: "EUR"
                 });
 
@@ -80,6 +81,25 @@ sap.ui.define([
                         DeliveryDocument: this._objectId
                     });
                     this._bindView("/" + objectPath);
+
+                    // Delivery item data is needed for creation of XML
+                    let detailView = this.getModel("detailView");
+                    this.getView().getModel().read("/ZEPTD_ITEM_CDS", {
+                        urlParameters: {
+                            "$filter": "DeliveryDocument eq '" + this._objectId + "'"
+                        },
+                        success: function (data) {
+                            console.log("Children data:", data);
+
+                            let xml = XmlGenerator.generate(data.results);
+                            detailView.setProperty("/xml", xml);
+                        },
+                        error: function (error) {
+                            console.error("Error fetching children data:", error);
+                            let xml = "Error fetching delivery item data.";
+                            detailView.setProperty("/xml", xml);
+                        }
+                    });
                 }.bind(this));
             },
 
@@ -115,9 +135,6 @@ sap.ui.define([
 
                 let path = elementBinding.getPath();
                 this.getOwnerComponent().listSelector.selectAListItem(path);
-
-                let xml = XmlGenerator.generate();
-                this.getModel("detailView").setProperty("/xml", xml);
             },
 
             _onMetadataLoaded: function () {

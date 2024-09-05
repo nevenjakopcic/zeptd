@@ -87,9 +87,9 @@
                             formatter: 'formatMessage'
                         }"
                         number="{
-                            path: 'OrderDate',
+                            path: 'CreationDate',
                             type: 'DateType',
-                            formatOptions: { style: 'short' }
+                            formatOptions: { style: 'long' }
                         }">
                     </ObjectListItem>
                 </items>

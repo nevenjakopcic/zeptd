@@ -25,6 +25,9 @@
     <edmx:Reference Uri="https://my407970-api.s4hana.cloud.sap/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
     </edmx:Reference>
+    <edmx:Reference Uri="https://my407970-api.s4hana.cloud.sap/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
     <edmx:Reference Uri="https://my407970-api.s4hana.cloud.sap/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
     </edmx:Reference>
@@ -39,26 +42,63 @@
     </edmx:Reference>
     <edmx:DataServices m:DataServiceVersion="2.0">
         <Schema Namespace="cds_zeptd_srv_def" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="I_Customer_VHType" sap:label="Customer" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Customer"/>
+                </Key>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="BPCustomerName" sap:label="Customer" sap:quickinfo="Customer Number"/>
+                <Property Name="OrganizationBPName1" Type="Edm.String" MaxLength="35" sap:label="Customer Name 1" sap:quickinfo="Name"/>
+                <Property Name="BusinessPartnerName1" Type="Edm.String" MaxLength="40" sap:label="Business Partner Name 1" sap:quickinfo="Name 1"/>
+                <Property Name="OrganizationBPName2" Type="Edm.String" MaxLength="35" sap:label="Customer Name 2" sap:quickinfo="Name 2"/>
+                <Property Name="BusinessPartnerName2" Type="Edm.String" MaxLength="40" sap:label="Business Partner Name 2" sap:quickinfo="Name 2"/>
+                <Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country/Region" sap:quickinfo="Country/Region Key"/>
+                <Property Name="CityName" Type="Edm.String" MaxLength="35" sap:label="City"/>
+                <Property Name="BPAddrCityName" Type="Edm.String" MaxLength="40" sap:label="Business Partner Address City" sap:quickinfo="City"/>
+                <Property Name="StreetName" Type="Edm.String" MaxLength="35" sap:label="Street" sap:quickinfo="Street and House Number"/>
+                <Property Name="BPAddrStreetName" Type="Edm.String" MaxLength="60" sap:label="Business Partner Address Street" sap:quickinfo="Street"/>
+                <Property Name="PostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code"/>
+                <Property Name="CustomerName" Type="Edm.String" MaxLength="80" sap:label="Customer Name" sap:quickinfo="Name of Customer"/>
+                <Property Name="BPCustomerName" Type="Edm.String" MaxLength="81" sap:label="Business Partner Customer Name" sap:quickinfo="Customer Name"/>
+                <Property Name="CustomerAccountGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Account Group" sap:quickinfo="Customer Account Group"/>
+                <Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Authorization" sap:quickinfo="Authorization Group"/>
+                <Property Name="IsBusinessPurposeCompleted" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Purpose Complete Flag" sap:quickinfo="Business Purpose Completed Flag"/>
+                <Property Name="IsCompetitor" Type="Edm.Boolean" sap:label="Competitors" sap:quickinfo="Indicator: Competitor"/>
+                <Property Name="BusinessPartner" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Business Partner" sap:quickinfo="Business Partner Number"/>
+                <Property Name="BusinessPartnerType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Business Partner Type"/>
+                <Property Name="DataControllerSet" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Data Ctrlr. Set" sap:quickinfo="BP: Data Controller Set Flag"/>
+                <Property Name="DataController1" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+                <Property Name="DataController2" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+                <Property Name="DataController3" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+                <Property Name="DataController4" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+                <Property Name="DataController5" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+                <Property Name="DataController6" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+                <Property Name="DataController7" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+                <Property Name="DataController8" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+                <Property Name="DataController9" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+                <Property Name="DataController10" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Data Controller" sap:quickinfo="BP: Data Controller (Internal Use Only)"/>
+            </EntityType>
             <EntityType Name="ZEPTD_CDSType" sap:label="CDS View with data for E-PTD" sap:content-version="1">
                 <Key>
                     <PropertyRef Name="DeliveryDocument"/>
                 </Key>
                 <Property Name="DeliveryDocument" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Delivery"/>
-                <Property Name="SalesOrganization" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Sales Organization"/>
                 <Property Name="CreationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created On" sap:quickinfo="Record Creation Date"/>
-                <Property Name="Product" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Product" sap:quickinfo="Product Number"/>
-                <Property Name="DeliveryDocumentItemText" Type="Edm.String" MaxLength="40" sap:label="Item Description" sap:quickinfo="Short Text for Sales Order Item"/>
-                <Property Name="Batch" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Batch" sap:quickinfo="Batch Number"/>
-                <Property Name="ActualDeliveryQuantity" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="DeliveryQuantityUnit" sap:label="Delivery Quantity" sap:quickinfo="Actual quantity delivered (in sales units)"/>
-                <Property Name="DeliveryQuantityUnit" Type="Edm.String" MaxLength="3" sap:label="Sales Unit" sap:semantics="unit-of-measure"/>
-                <Property Name="ItemNetWeight" Type="Edm.Decimal" Precision="15" Scale="3" sap:unit="ItemWeightUnit" sap:label="Net Weight"/>
-                <Property Name="ItemGrossWeight" Type="Edm.Decimal" Precision="15" Scale="3" sap:unit="ItemWeightUnit" sap:label="Gross Weight"/>
-                <Property Name="ItemWeightUnit" Type="Edm.String" MaxLength="3" sap:label="Unit of Weight" sap:semantics="unit-of-measure"/>
-                <Property Name="ItemVolume" Type="Edm.Decimal" Precision="15" Scale="3" sap:unit="ItemVolumeUnit" sap:label="Volume"/>
-                <Property Name="ItemVolumeUnit" Type="Edm.String" MaxLength="3" sap:label="Volume Unit" sap:semantics="unit-of-measure"/>
+                <Property Name="LoadingPoint" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Loading Point"/>
+                <Property Name="SoldToParty" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Sold-to Party" sap:value-list="standard"/>
+                <Property Name="ShipToParty" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Ship-to Party" sap:value-list="standard"/>
+                <Property Name="ReferenceDocumentNumber" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Reference" sap:quickinfo="Reference Document Number"/>
+                <NavigationProperty Name="toitem" Relationship="cds_zeptd_srv_def.assoc_809945ED60370372A322E8759872C2DE" FromRole="FromRole_assoc_809945ED60370372A322E8759872C2DE" ToRole="ToRole_assoc_809945ED60370372A322E8759872C2DE"/>
+            </EntityType>
+            <EntityType Name="ZEPTD_ITEM_CDSType" sap:label="CDS View with item data for E-PTD" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DeliveryDocument"/>
+                    <PropertyRef Name="DeliveryDocumentItem"/>
+                </Key>
+                <Property Name="DeliveryDocument" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Delivery"/>
+                <Property Name="DeliveryDocumentItem" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="Item" sap:quickinfo="Delivery Item"/>
+                <Property Name="Material" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Material Number"/>
                 <Property Name="Plant" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Plant"/>
-                <Property Name="StorageLocation" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Storage Location"/>
-                <Property Name="ReferenceSDDocument" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Reference Document" sap:quickinfo="Document Number of Reference Document"/>
+                <Property Name="ProductDescription" Type="Edm.String" MaxLength="40" sap:label="Product Description"/>
             </EntityType>
             <EntityType Name="SAP__Currency" sap:content-version="1">
                 <Key>
@@ -197,6 +237,10 @@
             <ComplexType Name="SAP__HeaderFooterField">
                 <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
             </ComplexType>
+            <Association Name="assoc_809945ED60370372A322E8759872C2DE" sap:content-version="1">
+                <End Type="cds_zeptd_srv_def.ZEPTD_CDSType" Multiplicity="1" Role="FromRole_assoc_809945ED60370372A322E8759872C2DE"/>
+                <End Type="cds_zeptd_srv_def.ZEPTD_ITEM_CDSType" Multiplicity="*" Role="ToRole_assoc_809945ED60370372A322E8759872C2DE"/>
+            </Association>
             <Association Name="to_format" sap:content-version="1">
                 <End Type="cds_zeptd_srv_def.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_format"/>
                 <End Type="cds_zeptd_srv_def.SAP__Format" Multiplicity="1" Role="ToRole_to_format"/>
@@ -294,6 +338,9 @@
                 </ReferentialConstraint>
             </Association>
             <EntityContainer Name="cds_zeptd_srv_def_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx pdf">
+                <EntitySet Name="I_Customer_VH" EntityType="cds_zeptd_srv_def.I_Customer_VHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZEPTD_CDS" EntityType="cds_zeptd_srv_def.ZEPTD_CDSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZEPTD_ITEM_CDS" EntityType="cds_zeptd_srv_def.ZEPTD_ITEM_CDSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="SAP__FormatSet" EntityType="cds_zeptd_srv_def.SAP__Format" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
                 <EntitySet Name="SAP__PDFStandardSet" EntityType="cds_zeptd_srv_def.SAP__PDFStandard" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
                 <EntitySet Name="SAP__TableColumnsSet" EntityType="cds_zeptd_srv_def.SAP__TableColumns" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
@@ -303,17 +350,28 @@
                 <EntitySet Name="SAP__PDFHeaderSet" EntityType="cds_zeptd_srv_def.SAP__PDFHeader" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
                 <EntitySet Name="SAP__PDFFooterSet" EntityType="cds_zeptd_srv_def.SAP__PDFFooter" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
                 <EntitySet Name="SAP__ValueHelpSet" EntityType="cds_zeptd_srv_def.SAP__ValueHelp" sap:content-version="1"/>
-                <EntitySet Name="ZEPTD_CDS" EntityType="cds_zeptd_srv_def.ZEPTD_CDSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
                 <EntitySet Name="SAP__Currencies" EntityType="cds_zeptd_srv_def.SAP__Currency" sap:content-version="1"/>
                 <EntitySet Name="SAP__UnitsOfMeasure" EntityType="cds_zeptd_srv_def.SAP__UnitOfMeasure" sap:content-version="1"/>
                 <EntitySet Name="SAP__MyDocumentDescriptions" EntityType="cds_zeptd_srv_def.SAP__DocumentDescription" sap:content-version="1"/>
-                <AssociationSet Name="to_FooterSet" Association="cds_zeptd_srv_def.to_Footer" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
-                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_Footer"/>
-                    <End EntitySet="SAP__PDFFooterSet" Role="ToRole_to_Footer"/>
+                <AssociationSet Name="assoc_809945ED60370372A322E8759872C2DE" Association="cds_zeptd_srv_def.assoc_809945ED60370372A322E8759872C2DE" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZEPTD_CDS" Role="FromRole_assoc_809945ED60370372A322E8759872C2DE"/>
+                    <End EntitySet="ZEPTD_ITEM_CDS" Role="ToRole_assoc_809945ED60370372A322E8759872C2DE"/>
+                </AssociationSet>
+                <AssociationSet Name="to_HierarchySet" Association="cds_zeptd_srv_def.to_Hierarchy" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_Hierarchy"/>
+                    <End EntitySet="SAP__HierarchySet" Role="ToRole_to_Hierarchy"/>
+                </AssociationSet>
+                <AssociationSet Name="to_tablecolumnsSet" Association="cds_zeptd_srv_def.to_tablecolumns" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_tablecolumns"/>
+                    <End EntitySet="SAP__TableColumnsSet" Role="ToRole_to_tablecolumns"/>
                 </AssociationSet>
                 <AssociationSet Name="to_headerSet" Association="cds_zeptd_srv_def.to_header" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
                     <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_header"/>
                     <End EntitySet="SAP__PDFHeaderSet" Role="ToRole_to_header"/>
+                </AssociationSet>
+                <AssociationSet Name="to_FooterSet" Association="cds_zeptd_srv_def.to_Footer" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_Footer"/>
+                    <End EntitySet="SAP__PDFFooterSet" Role="ToRole_to_Footer"/>
                 </AssociationSet>
                 <AssociationSet Name="to_formatSet" Association="cds_zeptd_srv_def.to_format" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
                     <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_format"/>
@@ -323,10 +381,6 @@
                     <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_pdfstandard"/>
                     <End EntitySet="SAP__PDFStandardSet" Role="ToRole_to_pdfstandard"/>
                 </AssociationSet>
-                <AssociationSet Name="to_tablecolumnsSet" Association="cds_zeptd_srv_def.to_tablecolumns" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
-                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_tablecolumns"/>
-                    <End EntitySet="SAP__TableColumnsSet" Role="ToRole_to_tablecolumns"/>
-                </AssociationSet>
                 <AssociationSet Name="to_signatureSet" Association="cds_zeptd_srv_def.to_signature" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
                     <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_signature"/>
                     <End EntitySet="SAP__SignatureSet" Role="ToRole_to_signature"/>
@@ -335,16 +389,162 @@
                     <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_coverpage"/>
                     <End EntitySet="SAP__CoverPageSet" Role="ToRole_to_coverpage"/>
                 </AssociationSet>
-                <AssociationSet Name="to_HierarchySet" Association="cds_zeptd_srv_def.to_Hierarchy" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
-                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_Hierarchy"/>
-                    <End EntitySet="SAP__HierarchySet" Role="ToRole_to_Hierarchy"/>
-                </AssociationSet>
             </EntityContainer>
             <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zeptd_srv_def.ZEPTD_CDSType/SoldToParty" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Sold-to Party"/>
+                        <PropertyValue Property="CollectionPath" String="I_Customer_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SoldToParty"/>
+                                    <PropertyValue Property="ValueListProperty" String="Customer"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="OrganizationBPName1"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BusinessPartnerName1"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="OrganizationBPName2"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BusinessPartnerName2"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Country"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CityName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="StreetName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PostalCode"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CustomerName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BPCustomerName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BusinessPartner"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zeptd_srv_def.ZEPTD_CDSType/ShipToParty" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Ship-to Party"/>
+                        <PropertyValue Property="CollectionPath" String="I_Customer_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ShipToParty"/>
+                                    <PropertyValue Property="ValueListProperty" String="Customer"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="OrganizationBPName1"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BusinessPartnerName1"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="OrganizationBPName2"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BusinessPartnerName2"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Country"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CityName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="StreetName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="PostalCode"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CustomerName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BPCustomerName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BusinessPartner"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
             <Annotations Target="cds_zeptd_srv_def.cds_zeptd_srv_def_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
             </Annotations>
+            <Annotations Target="cds_zeptd_srv_def.cds_zeptd_srv_def_Entities/I_Customer_VH" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
             <Annotations Target="cds_zeptd_srv_def.cds_zeptd_srv_def_Entities/ZEPTD_CDS" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="toitem"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zeptd_srv_def.cds_zeptd_srv_def_Entities/ZEPTD_ITEM_CDS" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Capabilities.DeleteRestrictions">
                     <Record>
                         <PropertyValue Property="Deletable" Bool="false"/>
