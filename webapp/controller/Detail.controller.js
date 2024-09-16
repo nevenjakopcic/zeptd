@@ -82,24 +82,39 @@ sap.ui.define([
                     });
                     this._bindView("/" + objectPath);
 
-                    // Delivery item data is needed for creation of XML
                     let detailView = this.getModel("detailView");
+                    let bodyData, childrenData;
+
+                    // Delivery data is needed for creation of XML
+                    this.getView().getModel().read(`/ZEPTD_CDS(${this._objectId})`, {
+                        success: function (data) {
+                            bodyData = data;
+                            console.log("Body data:", bodyData);
+                        },
+                        error: function (error) {
+                            console.error("Error fetching body data:", error);
+                        }
+                    });
+
+                    // Delivery item data is needed for creation of XML
                     this.getView().getModel().read("/ZEPTD_ITEM_CDS", {
                         urlParameters: {
                             "$filter": "DeliveryDocument eq '" + this._objectId + "'"
                         },
                         success: function (data) {
-                            console.log("Children data:", data);
+                            childrenData = data.results;
+                            console.log("Children data:", childrenData);
 
-                            let xml = XmlGenerator.generate(data.results);
-                            detailView.setProperty("/xml", xml);
+                            if (bodyData) {
+                                let xml = XmlGenerator.generate(bodyData, childrenData);
+                                detailView.setProperty("/xml", xml);
+                            }
                         },
                         error: function (error) {
-                            console.error("Error fetching children data:", error);
-                            let xml = "Error fetching delivery item data.";
-                            detailView.setProperty("/xml", xml);
+                            console.error("Error fetching item data:", error);
                         }
                     });
+
                 }.bind(this));
             },
 

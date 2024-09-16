@@ -87,6 +87,16 @@
                 <Property Name="SoldToParty" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Sold-to Party" sap:value-list="standard"/>
                 <Property Name="ShipToParty" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Ship-to Party" sap:value-list="standard"/>
                 <Property Name="ReferenceDocumentNumber" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Reference" sap:quickinfo="Reference Document Number"/>
+                <Property Name="ConsigneeTraderName" Type="Edm.String" MaxLength="40" sap:label="Name" sap:quickinfo="Name 1"/>
+                <Property Name="ConsigneeTraderStreet" Type="Edm.String" MaxLength="60" sap:label="Street"/>
+                <Property Name="ConsigneeTraderHouseNumber" Type="Edm.String" MaxLength="10" sap:label="House Number"/>
+                <Property Name="ConsigneeTraderPostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code" sap:quickinfo="City Postal Code"/>
+                <Property Name="ConsigneeTraderCity" Type="Edm.String" MaxLength="40" sap:label="City"/>
+                <Property Name="ConsignorTraderName" Type="Edm.String" MaxLength="40" sap:label="Name" sap:quickinfo="Name 1"/>
+                <Property Name="ConsignorTraderStreet" Type="Edm.String" MaxLength="60" sap:label="Street"/>
+                <Property Name="ConsignorTraderHouseNumber" Type="Edm.String" MaxLength="10" sap:label="House Number"/>
+                <Property Name="ConsignorTraderPostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code" sap:quickinfo="City Postal Code"/>
+                <Property Name="ConsignorTraderCity" Type="Edm.String" MaxLength="40" sap:label="City"/>
                 <NavigationProperty Name="toitem" Relationship="cds_zeptd_srv_def.assoc_809945ED60370372A322E8759872C2DE" FromRole="FromRole_assoc_809945ED60370372A322E8759872C2DE" ToRole="ToRole_assoc_809945ED60370372A322E8759872C2DE"/>
             </EntityType>
             <EntityType Name="ZEPTD_ITEM_CDSType" sap:label="CDS View with item data for E-PTD" sap:content-version="1">

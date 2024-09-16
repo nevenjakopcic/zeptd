@@ -11,6 +11,13 @@
         "description": "{{appDescription}}",
         "resources": "resources.json",
         "dataSources": {
+            "ZEPTD_SRV_BIND_Annotation": {
+                "uri": "/destinations/S4HC_STARTER_DEV_SAML_ASSERTION/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZEPTD_SRV_BIND_VAN',Version='0001')/$value/",
+                "type": "ODataAnnotation",
+                "settings": {
+                    "localUri": "localService/ZEPTD_SRV_BIND/ZEPTD_SRV_BIND_Annotation.xml"
+                }
+            },
             "ZEPTD_SRV_BIND": {
                 "uri": "/sap/opu/odata/sap/ZEPTD_SRV_BIND",
                 "type": "OData",
@@ -18,15 +25,8 @@
                     "annotations": [
                         "ZEPTD_SRV_BIND_Annotation"
                     ],
-                    "localUri": "localService/metadata.xml",
+                    "localUri": "localService/ZEPTD_SRV_BIND/metadata.xml",
                     "odataVersion": "2.0"
-                }
-            },
-            "ZEPTD_SRV_BIND_Annotation": {
-                "uri": "/destinations/S4HC_STARTER_DEV_SAML_ASSERTION/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZEPTD_SRV_BIND',Version='0001')/$value/",
-                "type": "ODataAnnotation",
-                "settings": {
-                    "localUri": "localService/ZEPTD_SRV_BIND_Annotation.xml"
                 }
             }
         },

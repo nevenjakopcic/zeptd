@@ -6,15 +6,14 @@ sap.ui.define([
     "use strict";
 
     return {
-        generate: function (deliveryItems) {
-            let json = this.baseJsonTemplate(deliveryItems);
-            
+        generate: function (body, items) {
+            let json = this.baseJsonTemplate(body, items);
 
             let xml = js2xml(json, { compact: false, ignoreComment: true, spaces: 4 });
             return xml;
         },
 
-        baseJsonTemplate: function (deliveryItems) {
+        baseJsonTemplate: function (body, items) {
             return {
                 "declaration": {
                     "attributes": {
@@ -145,7 +144,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.ConsigneeTraderName
                                                             }
                                                         ]
                                                     },
@@ -155,7 +154,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.ConsigneeTraderStreet
                                                             }
                                                         ]
                                                     },
@@ -165,7 +164,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.ConsigneeTraderHouseNumber
                                                             }
                                                         ]
                                                     },
@@ -175,7 +174,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.ConsigneeTraderPostalCode
                                                             }
                                                         ]
                                                     },
@@ -185,7 +184,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.ConsigneeTraderCity
                                                             }
                                                         ]
                                                     },
@@ -214,7 +213,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.ConsignorTraderName
                                                             }
                                                         ]
                                                     },
@@ -224,7 +223,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.ConsignorTraderStreet
                                                             }
                                                         ]
                                                     },
@@ -234,7 +233,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.ConsignorTraderHouseNumber
                                                             }
                                                         ]
                                                     },
@@ -244,7 +243,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.ConsignorTraderPostalCode
                                                             }
                                                         ]
                                                     },
@@ -254,7 +253,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.ConsignorTraderCity
                                                             }
                                                         ]
                                                     }
@@ -498,7 +497,107 @@ sap.ui.define([
                                                     }
                                                 ]
                                             },
-                                            ...this.generateBodyEads(deliveryItems)
+                                            ...this.generateBodyEads(items),
+                                            {
+                                                "type": "element",
+                                                "name": "ns2:Ead",
+                                                "elements": [
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:LocalReferenceNumber",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "3674951286023000163840"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:InvoiceNumber",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "41280-23010123-23"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:InvoiceDate",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "2023-07-26"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:OriginTypeCode",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:DateOfDispatch",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "2023-07-26"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:TimeOfDispatch",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "01:23:45"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "element",
+                                                "name": "ns2:TransportDetails",
+                                                "elements": [
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:TransportUnitCode",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "2"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:IdentityOfTransportUnits",
+                                                        "elements": [
+                                                            {
+                                                                "type": "text",
+                                                                "text": "ZD 385 AO"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:ComplementaryInformation",
+                                                    },
+                                                    {
+                                                        "type": "element",
+                                                        "name": "ns2:SealInformation",
+                                                    }
+                                                ]
+                                            }
                                         ]
                                     }
                                 ]
@@ -509,17 +608,17 @@ sap.ui.define([
             }
         },
 
-        generateBodyEads: function (deliveryItems) {
+        generateBodyEads: function (items) {
             let bodyEads = [];
-            for (let i = 0; i < deliveryItems.length; i++) {
-                let bodyEad = this.bodyEadJsonTemplate(i, deliveryItems[i]);
+            for (let i = 0; i < items.length; i++) {
+                let bodyEad = this.bodyEadJsonTemplate(i, items[i]);
                 bodyEads.push(bodyEad);
             }
 
             return bodyEads;
         },
 
-        bodyEadJsonTemplate: function (index, deliveryItem) {
+        bodyEadJsonTemplate: function (index, item) {
             return {
                 "type": "element",
                 "name": "ns2:BodyEad",
@@ -613,7 +712,7 @@ sap.ui.define([
                         "elements": [
                             {
                                 "type": "text",
-                                "text": deliveryItem.ProductDescription
+                                "text": item.ProductDescription
                             }
                         ]
                     },
