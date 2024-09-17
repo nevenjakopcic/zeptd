@@ -97,6 +97,16 @@
                 <Property Name="ConsignorTraderHouseNumber" Type="Edm.String" MaxLength="10" sap:label="House Number"/>
                 <Property Name="ConsignorTraderPostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code" sap:quickinfo="City Postal Code"/>
                 <Property Name="ConsignorTraderCity" Type="Edm.String" MaxLength="40" sap:label="City"/>
+                <Property Name="PODTraderName" Type="Edm.String" MaxLength="40" sap:label="Name" sap:quickinfo="Name 1"/>
+                <Property Name="PODTraderStreet" Type="Edm.String" MaxLength="60" sap:label="Street"/>
+                <Property Name="PODTraderHouseNumber" Type="Edm.String" MaxLength="10" sap:label="House Number"/>
+                <Property Name="PODTraderPostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code" sap:quickinfo="City Postal Code"/>
+                <Property Name="PODTraderCity" Type="Edm.String" MaxLength="40" sap:label="City"/>
+                <Property Name="DeliveryPlaceTraderName" Type="Edm.String" MaxLength="40" sap:label="Name" sap:quickinfo="Name 1"/>
+                <Property Name="DeliveryPlaceTraderStreet" Type="Edm.String" MaxLength="60" sap:label="Street"/>
+                <Property Name="DeliveryPlaceTraderHouseNumber" Type="Edm.String" MaxLength="10" sap:label="House Number"/>
+                <Property Name="DeliveryPlaceTraderPostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code" sap:quickinfo="City Postal Code"/>
+                <Property Name="DeliveryPlaceTraderCity" Type="Edm.String" MaxLength="40" sap:label="City"/>
                 <NavigationProperty Name="toitem" Relationship="cds_zeptd_srv_def.assoc_809945ED60370372A322E8759872C2DE" FromRole="FromRole_assoc_809945ED60370372A322E8759872C2DE" ToRole="ToRole_assoc_809945ED60370372A322E8759872C2DE"/>
             </EntityType>
             <EntityType Name="ZEPTD_ITEM_CDSType" sap:label="CDS View with item data for E-PTD" sap:content-version="1">
@@ -108,6 +118,11 @@
                 <Property Name="DeliveryDocumentItem" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="Item" sap:quickinfo="Delivery Item"/>
                 <Property Name="Material" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Material" sap:quickinfo="Material Number"/>
                 <Property Name="Plant" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Plant"/>
+                <Property Name="OriginalDeliveryQuantity" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="DeliveryQuantityUnit" sap:label="Delivery Quantity" sap:quickinfo="Original Quantity of Delivery Item"/>
+                <Property Name="DeliveryQuantityUnit" Type="Edm.String" MaxLength="3" sap:label="Sales Unit" sap:semantics="unit-of-measure"/>
+                <Property Name="ItemGrossWeight" Type="Edm.Decimal" Precision="15" Scale="3" sap:unit="ItemWeightUnit" sap:label="Gross Weight"/>
+                <Property Name="ItemNetWeight" Type="Edm.Decimal" Precision="15" Scale="3" sap:unit="ItemWeightUnit" sap:label="Net Weight"/>
+                <Property Name="ItemWeightUnit" Type="Edm.String" MaxLength="3" sap:label="Unit of Weight" sap:semantics="unit-of-measure"/>
                 <Property Name="ProductDescription" Type="Edm.String" MaxLength="40" sap:label="Product Description"/>
             </EntityType>
             <EntityType Name="SAP__Currency" sap:content-version="1">

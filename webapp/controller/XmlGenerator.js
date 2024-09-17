@@ -282,7 +282,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.PODTraderName
                                                             }
                                                         ]
                                                     },
@@ -292,7 +292,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.PODTraderStreet
                                                             }
                                                         ]
                                                     },
@@ -302,7 +302,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.PODTraderHouseNumber
                                                             }
                                                         ]
                                                     },
@@ -312,7 +312,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.PODTraderPostalCode
                                                             }
                                                         ]
                                                     },
@@ -322,7 +322,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.PODTraderCity
                                                             }
                                                         ]
                                                     }
@@ -359,7 +359,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.DeliveryPlaceTraderName
                                                             }
                                                         ]
                                                     },
@@ -369,7 +369,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.DeliveryPlaceTraderStreet
                                                             }
                                                         ]
                                                     },
@@ -379,7 +379,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.DeliveryPlaceTraderHouseNumber
                                                             }
                                                         ]
                                                     },
@@ -389,7 +389,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.DeliveryPlaceTraderPostalCode
                                                             }
                                                         ]
                                                     },
@@ -399,7 +399,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.DeliveryPlaceTraderCity
                                                             }
                                                         ]
                                                     }
@@ -659,7 +659,7 @@ sap.ui.define([
                         "elements": [
                             {
                                 "type": "text",
-                                "text": "1"
+                                "text": item.OriginalDeliveryQuantity
                             }
                         ]
                     },
@@ -669,7 +669,7 @@ sap.ui.define([
                         "elements": [
                             {
                                 "type": "text",
-                                "text": "1"
+                                "text": item.ItemGrossWeight
                             }
                         ]
                     },
@@ -679,7 +679,7 @@ sap.ui.define([
                         "elements": [
                             {
                                 "type": "text",
-                                "text": "1"
+                                "text": item.ItemNetWeight
                             }
                         ]
                     },

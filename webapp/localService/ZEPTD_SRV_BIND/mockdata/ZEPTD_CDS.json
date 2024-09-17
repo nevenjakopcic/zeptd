@@ -1,7 +1,7 @@
 [
     {
         "DeliveryDocument": "YKJLUvQfog",
-        "CreationDate": "/Date(968393937000)/",
+        "CreationDate": "/Date(1698883200000)/",
         "LoadingPoint": "L1",
         "SoldToParty": "SoldToPar1",
         "ShipToParty": "ShipToPar1",
@@ -15,11 +15,21 @@
         "ConsignorTraderStreet": "ConsignorTraderStreet1",
         "ConsignorTraderHouseNumber": "Consignor1",
         "ConsignorTraderPostalCode": "Consignor1",
-        "ConsignorTraderCity": "ConsignorTraderCity1"
+        "ConsignorTraderCity": "ConsignorTraderCity1",
+        "PODTraderName": "PODTraderName1",
+        "PODTraderStreet": "PODTraderStreet1",
+        "PODTraderHouseNumber": "PODTrader1",
+        "PODTraderPostalCode": "PODTrader1",
+        "PODTraderCity": "PODTraderCity1",
+        "DeliveryPlaceTraderName": "DeliveryPlaceTraderName1",
+        "DeliveryPlaceTraderStreet": "DeliveryPlaceTraderStreet1",
+        "DeliveryPlaceTraderHouseNumber": "DeliveryP1",
+        "DeliveryPlaceTraderPostalCode": "DeliveryP1",
+        "DeliveryPlaceTraderCity": "DeliveryPlaceTraderCity1"
     },
     {
         "DeliveryDocument": "LQlybmecmQ",
-        "CreationDate": "/Date(793815004000)/",
+        "CreationDate": "/Date(1705795200000)/",
         "LoadingPoint": "L2",
         "SoldToParty": "SoldToPar2",
         "ShipToParty": "ShipToPar2",
@@ -33,11 +43,21 @@
         "ConsignorTraderStreet": "ConsignorTraderStreet2",
         "ConsignorTraderHouseNumber": "Consignor2",
         "ConsignorTraderPostalCode": "Consignor2",
-        "ConsignorTraderCity": "ConsignorTraderCity2"
+        "ConsignorTraderCity": "ConsignorTraderCity2",
+        "PODTraderName": "PODTraderName2",
+        "PODTraderStreet": "PODTraderStreet2",
+        "PODTraderHouseNumber": "PODTrader2",
+        "PODTraderPostalCode": "PODTrader2",
+        "PODTraderCity": "PODTraderCity2",
+        "DeliveryPlaceTraderName": "DeliveryPlaceTraderName2",
+        "DeliveryPlaceTraderStreet": "DeliveryPlaceTraderStreet2",
+        "DeliveryPlaceTraderHouseNumber": "DeliveryP2",
+        "DeliveryPlaceTraderPostalCode": "DeliveryP2",
+        "DeliveryPlaceTraderCity": "DeliveryPlaceTraderCity2"
     },
     {
         "DeliveryDocument": "PGPeYhWOBo",
-        "CreationDate": "/Date(735252326000)/",
+        "CreationDate": "/Date(1717027200000)/",
         "LoadingPoint": "L3",
         "SoldToParty": "SoldToPar3",
         "ShipToParty": "ShipToPar3",
@@ -51,6 +71,16 @@
         "ConsignorTraderStreet": "ConsignorTraderStreet3",
         "ConsignorTraderHouseNumber": "Consignor3",
         "ConsignorTraderPostalCode": "Consignor3",
-        "ConsignorTraderCity": "ConsignorTraderCity3"
+        "ConsignorTraderCity": "ConsignorTraderCity3",
+        "PODTraderName": "PODTraderName3",
+        "PODTraderStreet": "PODTraderStreet3",
+        "PODTraderHouseNumber": "PODTrader3",
+        "PODTraderPostalCode": "PODTrader3",
+        "PODTraderCity": "PODTraderCity3",
+        "DeliveryPlaceTraderName": "DeliveryPlaceTraderName3",
+        "DeliveryPlaceTraderStreet": "DeliveryPlaceTraderStreet3",
+        "DeliveryPlaceTraderHouseNumber": "DeliveryP3",
+        "DeliveryPlaceTraderPostalCode": "DeliveryP3",
+        "DeliveryPlaceTraderCity": "DeliveryPlaceTraderCity3"
     }
 ]

@@ -86,7 +86,7 @@ sap.ui.define([
                     let bodyData, childrenData;
 
                     // Delivery data is needed for creation of XML
-                    this.getView().getModel().read(`/ZEPTD_CDS(${this._objectId})`, {
+                    this.getView().getModel().read(`/ZEPTD_CDS(DeliveryDocument='${this._objectId}')`, {
                         success: function (data) {
                             bodyData = data;
                             console.log("Body data:", bodyData);
