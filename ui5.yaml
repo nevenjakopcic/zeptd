@@ -17,12 +17,12 @@ server:
           url: https://ui5.sap.com
         backend:
           - path: /sap
-            url: https://my407970-api.s4hana.cloud.sap
-            destination: S4HC_STARTER_DEV_SAML_ASSERTION
+            url: https://my408038-api.s4hana.cloud.sap
+            destination: S4HC_DEVELOPMENT_080
             authenticationType: SAMLAssertion
           - path: /sap/opu/odata/sap/ZEPTD_SRV_BIND
-            url: https://my407970-api.s4hana.cloud.sap
-            destination: S4HC_STARTER_DEV_SAML_ASSERTION
+            url: https://my408038-api.s4hana.cloud.sap
+            destination: S4HC_DEVELOPMENT_080
             authenticationType: SAMLAssertion
     - name: fiori-tools-appreload
       afterMiddleware: compression

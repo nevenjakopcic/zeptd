@@ -1,23 +1,3 @@
-## Application Details
-|               |
-| ------------- |
-|**Generation Date and Time**<br>Tue Jun 04 2024 07:50:37 GMT+0000 (Coordinated Universal Time)|
-|**App Generator**<br>@sap/generator-fiori-elements|
-|**App Generator Version**<br>1.13.5|
-|**Generation Platform**<br>SAP Business Application Studio|
-|**Template Used**<br>List Report Page V4|
-|**Service Type**<br>SAP System (ABAP On Premise)|
-|**Service URL**<br>https://my407970-api.s4hana.cloud.sap/sap/opu/odata4/sap/zeptd_srv_bind/srvd/sap/zeptd_srv_def/0001/
-|**Module Name**<br>zeptd|
-|**Application Title**<br>ZEPTD|
-|**Namespace**<br>hr.axians|
-|**UI5 Theme**<br>sap_horizon|
-|**UI5 Version**<br>1.120.13|
-|**Enable Code Assist Libraries**<br>False|
-|**Enable TypeScript**<br>False|
-|**Add Eslint configuration**<br>False|
-|**Main Entity**<br>ZEPTD_CDS|
-
 ## zeptd
 
 An SAP Fiori application.

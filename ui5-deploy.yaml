@@ -13,13 +13,13 @@ builder:
     - name: deploy-to-abap
       afterTask: generateCachebusterInfo
       configuration:
-        log: 4
         target:
-          destination: S4HC_STARTER_DEV_SAML_ASSERTION
-          url: https://my407970-api.s4hana.cloud.sap
+          destination: S4HC_DEVELOPMENT_080
+          url: https://my408038-api.s4hana.cloud.sap
         app:
           name: ZEPTD
+          description: E-PTD Generator
           package: ZEPTD
-          transport: ZNCK900237
+          transport: ZO2K901070
         exclude:
           - /test/
