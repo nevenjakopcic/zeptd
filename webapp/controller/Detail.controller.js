@@ -20,7 +20,6 @@ sap.ui.define([
                 let viewModel = new JSONModel({
                     busy: false,
                     delay: 0,
-                    lineItemListTitle: this.getResourceBundle().getText("detailLineItemTableHeading"),
                     xml: "",
                     deliveryItems: [],
                     currency: "EUR"

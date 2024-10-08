@@ -20,6 +20,6 @@ builder:
           name: ZEPTD
           description: E-PTD Generator
           package: ZEPTD
-          transport: ZO2K901070
+          transport: ZO2K901210
         exclude:
           - /test/

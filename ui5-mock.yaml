@@ -39,4 +39,4 @@ server:
             generateMockData: true
         annotations:
           - localPath: ./webapp/localService/ZEPTD_SRV_BIND/ZEPTD_SRV_BIND_Annotation.xml
-            urlPath: /destinations/S4HC_STARTER_DEV_SAML_ASSERTION/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZEPTD_SRV_BIND_VAN',Version='0001')/$value/
+            urlPath: /sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZEPTD_SRV_BIND_VAN',Version='0001')/$value/

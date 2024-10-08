@@ -2,9 +2,6 @@
     {
         "DeliveryDocument": "YKJLUvQfog",
         "CreationDate": "/Date(1698883200000)/",
-        "LoadingPoint": "L1",
-        "SoldToParty": "SoldToPar1",
-        "ShipToParty": "ShipToPar1",
         "ReferenceDocumentNumber": "ReferenceDocume1",
         "ConsigneeTraderName": "ConsigneeTraderName1",
         "ConsigneeTraderStreet": "ConsigneeTraderStreet1",
@@ -25,14 +22,13 @@
         "DeliveryPlaceTraderStreet": "DeliveryPlaceTraderStreet1",
         "DeliveryPlaceTraderHouseNumber": "DeliveryP1",
         "DeliveryPlaceTraderPostalCode": "DeliveryP1",
-        "DeliveryPlaceTraderCity": "DeliveryPlaceTraderCity1"
+        "DeliveryPlaceTraderCity": "DeliveryPlaceTraderCity1",
+        "DateOfDispatch": "/Date(1727827200000)/",
+        "TimeOfDispatch": "PT13H42M01S"
     },
     {
         "DeliveryDocument": "LQlybmecmQ",
         "CreationDate": "/Date(1705795200000)/",
-        "LoadingPoint": "L2",
-        "SoldToParty": "SoldToPar2",
-        "ShipToParty": "ShipToPar2",
         "ReferenceDocumentNumber": "ReferenceDocume2",
         "ConsigneeTraderName": "ConsigneeTraderName2",
         "ConsigneeTraderStreet": "ConsigneeTraderStreet2",
@@ -53,14 +49,13 @@
         "DeliveryPlaceTraderStreet": "DeliveryPlaceTraderStreet2",
         "DeliveryPlaceTraderHouseNumber": "DeliveryP2",
         "DeliveryPlaceTraderPostalCode": "DeliveryP2",
-        "DeliveryPlaceTraderCity": "DeliveryPlaceTraderCity2"
+        "DeliveryPlaceTraderCity": "DeliveryPlaceTraderCity2",
+        "DateOfDispatch": "/Date(1727827200000)/",
+        "TimeOfDispatch": "PT13H42M01S"
     },
     {
         "DeliveryDocument": "PGPeYhWOBo",
         "CreationDate": "/Date(1717027200000)/",
-        "LoadingPoint": "L3",
-        "SoldToParty": "SoldToPar3",
-        "ShipToParty": "ShipToPar3",
         "ReferenceDocumentNumber": "ReferenceDocume3",
         "ConsigneeTraderName": "ConsigneeTraderName3",
         "ConsigneeTraderStreet": "ConsigneeTraderStreet3",
@@ -81,6 +76,8 @@
         "DeliveryPlaceTraderStreet": "DeliveryPlaceTraderStreet3",
         "DeliveryPlaceTraderHouseNumber": "DeliveryP3",
         "DeliveryPlaceTraderPostalCode": "DeliveryP3",
-        "DeliveryPlaceTraderCity": "DeliveryPlaceTraderCity3"
+        "DeliveryPlaceTraderCity": "DeliveryPlaceTraderCity3",
+        "DateOfDispatch": "/Date(1727827200000)/",
+        "TimeOfDispatch": "PT13H42M01S"
     }
 ]

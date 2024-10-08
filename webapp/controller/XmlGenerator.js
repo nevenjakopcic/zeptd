@@ -445,7 +445,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "D01"
+                                                                "text": "D05"
                                                             }
                                                         ]
                                                     },
@@ -548,7 +548,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "2023-07-26"
+                                                                "text": body.DateOfDispatch.toLocaleDateString('en-CA')
                                                             }
                                                         ]
                                                     },
@@ -558,7 +558,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "01:23:45"
+                                                                "text": body.TimeOfDispatch
                                                             }
                                                         ]
                                                     }
@@ -639,7 +639,7 @@ sap.ui.define([
                         "elements": [
                             {
                                 "type": "text",
-                                "text": "1"
+                                "text": item.ExternalProductGroup
                             }
                         ]
                     },
