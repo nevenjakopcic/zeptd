@@ -5,7 +5,7 @@
     xmlns:core="sap.ui.core"
     xmlns:layout="sap.ui.layout"
     xmlns:codeEditor="sap.ui.codeeditor">
-    <f:DynamicPage id="page"
+    <f:DynamicPage id="detailPage"
         busy="{detailView>/busy}"
         busyIndicatorDelay="{detailView>delay}"
         core:require="{

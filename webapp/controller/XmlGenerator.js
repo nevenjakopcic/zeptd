@@ -134,7 +134,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": ""
+                                                                "text": body.ConsigneeTraderId
                                                             }
                                                         ]
                                                     },
@@ -203,7 +203,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": ""
+                                                                "text": body.ConsignorTraderId
                                                             }
                                                         ]
                                                     },
@@ -272,7 +272,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": ""
+                                                                "text": items[0] ? items[0].PODTraderId : ""
                                                             }
                                                         ]
                                                     },
@@ -349,7 +349,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": ""
+                                                                "text": body.DeliveryPlaceTraderId
                                                             }
                                                         ]
                                                     },
@@ -435,7 +435,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "99"
+                                                                "text": "1"
                                                             }
                                                         ]
                                                     },
@@ -508,7 +508,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "3674951286023000163840"
+                                                                "text": this.generateLocalReferenceNumber(body.DeliveryDocument)
                                                             }
                                                         ]
                                                     },
@@ -558,7 +558,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": body.TimeOfDispatch
+                                                                "text": sap.ui.core.format.DateFormat.getTimeInstance({pattern: "HH:mm:ss"}).format(new Date(body.TimeOfDispatch.ms))
                                                             }
                                                         ]
                                                     }
@@ -649,7 +649,7 @@ sap.ui.define([
                         "elements": [
                             {
                                 "type": "text",
-                                "text": "1"
+                                "text": item.CommodityCode
                             }
                         ]
                     },
@@ -712,7 +712,7 @@ sap.ui.define([
                         "elements": [
                             {
                                 "type": "text",
-                                "text": item.ProductDescription
+                                "text": item.DeliveryDocumentItemText.replace("%", "")
                             }
                         ]
                     },
@@ -748,6 +748,11 @@ sap.ui.define([
                     }
                 ]
             }
+        },
+
+        generateLocalReferenceNumber: function (deliveryDocument) {
+            let yy = DateFormat.getDateInstance({ pattern: "yy" }).format(UI5Date.getInstance());            
+            return "36749512860" + yy + deliveryDocument.padStart(9, "0"); 
         },
 
         uuidv4: function () {

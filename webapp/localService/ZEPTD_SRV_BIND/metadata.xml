@@ -49,11 +49,13 @@
                 <Property Name="DeliveryDocument" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Delivery"/>
                 <Property Name="CreationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created On" sap:quickinfo="Record Creation Date"/>
                 <Property Name="ReferenceDocumentNumber" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Reference" sap:quickinfo="Reference Document Number"/>
+                <Property Name="ConsigneeTraderId" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Search Term 2"/>
                 <Property Name="ConsigneeTraderName" Type="Edm.String" MaxLength="40" sap:label="Name" sap:quickinfo="Name 1"/>
                 <Property Name="ConsigneeTraderStreet" Type="Edm.String" MaxLength="60" sap:label="Street"/>
                 <Property Name="ConsigneeTraderHouseNumber" Type="Edm.String" MaxLength="10" sap:label="House Number"/>
                 <Property Name="ConsigneeTraderPostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code" sap:quickinfo="City Postal Code"/>
                 <Property Name="ConsigneeTraderCity" Type="Edm.String" MaxLength="40" sap:label="City"/>
+                <Property Name="ConsignorTraderId" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Search Term 2"/>
                 <Property Name="ConsignorTraderName" Type="Edm.String" MaxLength="40" sap:label="Name" sap:quickinfo="Name 1"/>
                 <Property Name="ConsignorTraderStreet" Type="Edm.String" MaxLength="60" sap:label="Street"/>
                 <Property Name="ConsignorTraderHouseNumber" Type="Edm.String" MaxLength="10" sap:label="House Number"/>
@@ -64,6 +66,7 @@
                 <Property Name="PODTraderHouseNumber" Type="Edm.String" MaxLength="10" sap:label="House Number"/>
                 <Property Name="PODTraderPostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code" sap:quickinfo="City Postal Code"/>
                 <Property Name="PODTraderCity" Type="Edm.String" MaxLength="40" sap:label="City"/>
+                <Property Name="DeliveryPlaceTraderId" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Search Term 2"/>
                 <Property Name="DeliveryPlaceTraderName" Type="Edm.String" MaxLength="40" sap:label="Name" sap:quickinfo="Name 1"/>
                 <Property Name="DeliveryPlaceTraderStreet" Type="Edm.String" MaxLength="60" sap:label="Street"/>
                 <Property Name="DeliveryPlaceTraderHouseNumber" Type="Edm.String" MaxLength="10" sap:label="House Number"/>
@@ -89,6 +92,13 @@
                 <Property Name="ItemWeightUnit" Type="Edm.String" MaxLength="3" sap:label="Unit of Weight" sap:semantics="unit-of-measure"/>
                 <Property Name="DeliveryDocumentItemText" Type="Edm.String" MaxLength="40" sap:label="Item Description" sap:quickinfo="Short Text for Sales Order Item"/>
                 <Property Name="ExternalProductGroup" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Ext. Product Group" sap:quickinfo="External Product Group"/>
+                <Property Name="CommodityCode" Type="Edm.String" MaxLength="30" sap:label="Commodity Code"/>
+                <Property Name="PODTraderId" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Search Term 2"/>
+                <Property Name="PODTraderName" Type="Edm.String" MaxLength="40" sap:label="Name" sap:quickinfo="Name 1"/>
+                <Property Name="PODTraderStreet" Type="Edm.String" MaxLength="60" sap:label="Street"/>
+                <Property Name="PODTraderHouseNumber" Type="Edm.String" MaxLength="10" sap:label="House Number"/>
+                <Property Name="PODTraderPostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code" sap:quickinfo="City Postal Code"/>
+                <Property Name="PODTraderCity" Type="Edm.String" MaxLength="40" sap:label="City"/>
             </EntityType>
             <EntityType Name="SAP__Currency" sap:content-version="1">
                 <Key>

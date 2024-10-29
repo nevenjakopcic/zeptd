@@ -6,7 +6,7 @@
     xmlns:semantic="sap.f.semantic"
     xmlns:fb="sap.ui.comp.filterbar">
     <semantic:SemanticPage
-        id="page"
+        id="masterPage"
         core:require="{
             formatMessage: 'sap/base/strings/formatMessage',
             DateType: 'sap/ui/model/type/Date'

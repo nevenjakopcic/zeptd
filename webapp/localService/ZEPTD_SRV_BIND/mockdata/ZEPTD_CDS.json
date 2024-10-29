@@ -1,6 +1,6 @@
 [
     {
-        "DeliveryDocument": "YKJLUvQfog",
+        "DeliveryDocument": "80000183",
         "CreationDate": "/Date(1698883200000)/",
         "ReferenceDocumentNumber": "ReferenceDocume1",
         "ConsigneeTraderName": "ConsigneeTraderName1",
@@ -24,10 +24,13 @@
         "DeliveryPlaceTraderPostalCode": "DeliveryP1",
         "DeliveryPlaceTraderCity": "DeliveryPlaceTraderCity1",
         "DateOfDispatch": "/Date(1727827200000)/",
-        "TimeOfDispatch": "PT13H42M01S"
+        "TimeOfDispatch": "PT13H42M01S",
+        "ConsigneeTraderId": "HR12345",
+        "ConsignorTraderId": "HR54321",
+        "DeliveryPlaceTraderId": "HR23451"
     },
     {
-        "DeliveryDocument": "LQlybmecmQ",
+        "DeliveryDocument": "80000184",
         "CreationDate": "/Date(1705795200000)/",
         "ReferenceDocumentNumber": "ReferenceDocume2",
         "ConsigneeTraderName": "ConsigneeTraderName2",
@@ -51,10 +54,13 @@
         "DeliveryPlaceTraderPostalCode": "DeliveryP2",
         "DeliveryPlaceTraderCity": "DeliveryPlaceTraderCity2",
         "DateOfDispatch": "/Date(1727827200000)/",
-        "TimeOfDispatch": "PT13H42M01S"
+        "TimeOfDispatch": "PT13H42M01S",
+        "ConsigneeTraderId": "HR12345",
+        "ConsignorTraderId": "HR54321",
+        "DeliveryPlaceTraderId": "HR23451"
     },
     {
-        "DeliveryDocument": "PGPeYhWOBo",
+        "DeliveryDocument": "80000185",
         "CreationDate": "/Date(1717027200000)/",
         "ReferenceDocumentNumber": "ReferenceDocume3",
         "ConsigneeTraderName": "ConsigneeTraderName3",
@@ -78,6 +84,9 @@
         "DeliveryPlaceTraderPostalCode": "DeliveryP3",
         "DeliveryPlaceTraderCity": "DeliveryPlaceTraderCity3",
         "DateOfDispatch": "/Date(1727827200000)/",
-        "TimeOfDispatch": "PT13H42M01S"
+        "TimeOfDispatch": "PT13H42M01S",
+        "ConsigneeTraderId": "HR12345",
+        "ConsignorTraderId": "HR54321",
+        "DeliveryPlaceTraderId": "HR23451"
     }
 ]
