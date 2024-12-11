@@ -27,7 +27,10 @@
         "TimeOfDispatch": "PT13H42M01S",
         "ConsigneeTraderId": "HR12345",
         "ConsignorTraderId": "HR54321",
-        "DeliveryPlaceTraderId": "HR23451"
+        "DeliveryPlaceTraderId": "HR23451",
+        "InvoiceNumber": "0090000121",
+        "InvoiceDate": "/Date(1727827200000)/",
+        "DestinationTypeCode": "1"
     },
     {
         "DeliveryDocument": "80000184",
@@ -57,7 +60,10 @@
         "TimeOfDispatch": "PT13H42M01S",
         "ConsigneeTraderId": "HR12345",
         "ConsignorTraderId": "HR54321",
-        "DeliveryPlaceTraderId": "HR23451"
+        "DeliveryPlaceTraderId": "HR23451",
+        "InvoiceNumber": "0090000122",
+        "InvoiceDate": "/Date(1727827200000)/",
+        "DestinationTypeCode": "1"
     },
     {
         "DeliveryDocument": "80000185",
@@ -87,6 +93,9 @@
         "TimeOfDispatch": "PT13H42M01S",
         "ConsigneeTraderId": "HR12345",
         "ConsignorTraderId": "HR54321",
-        "DeliveryPlaceTraderId": "HR23451"
+        "DeliveryPlaceTraderId": "HR23451",
+        "InvoiceNumber": "0090000123",
+        "InvoiceDate": "/Date(1727827200000)/",
+        "DestinationTypeCode": "99"
     }
 ]

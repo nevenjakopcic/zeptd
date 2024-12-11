@@ -49,7 +49,7 @@
                 <Property Name="DeliveryDocument" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Delivery"/>
                 <Property Name="CreationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created On" sap:quickinfo="Record Creation Date"/>
                 <Property Name="ReferenceDocumentNumber" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Reference" sap:quickinfo="Reference Document Number"/>
-                <Property Name="ConsigneeTraderId" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Search Term 2"/>
+                <Property Name="ConsigneeTraderId" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase" sap:label="ID Number" sap:quickinfo="Identification Number"/>
                 <Property Name="ConsigneeTraderName" Type="Edm.String" MaxLength="40" sap:label="Name" sap:quickinfo="Name 1"/>
                 <Property Name="ConsigneeTraderStreet" Type="Edm.String" MaxLength="60" sap:label="Street"/>
                 <Property Name="ConsigneeTraderHouseNumber" Type="Edm.String" MaxLength="10" sap:label="House Number"/>
@@ -66,14 +66,17 @@
                 <Property Name="PODTraderHouseNumber" Type="Edm.String" MaxLength="10" sap:label="House Number"/>
                 <Property Name="PODTraderPostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code" sap:quickinfo="City Postal Code"/>
                 <Property Name="PODTraderCity" Type="Edm.String" MaxLength="40" sap:label="City"/>
-                <Property Name="DeliveryPlaceTraderId" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Search Term 2"/>
+                <Property Name="DeliveryPlaceTraderId" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase" sap:label="ID Number" sap:quickinfo="Identification Number"/>
                 <Property Name="DeliveryPlaceTraderName" Type="Edm.String" MaxLength="40" sap:label="Name" sap:quickinfo="Name 1"/>
                 <Property Name="DeliveryPlaceTraderStreet" Type="Edm.String" MaxLength="60" sap:label="Street"/>
                 <Property Name="DeliveryPlaceTraderHouseNumber" Type="Edm.String" MaxLength="10" sap:label="House Number"/>
                 <Property Name="DeliveryPlaceTraderPostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code" sap:quickinfo="City Postal Code"/>
                 <Property Name="DeliveryPlaceTraderCity" Type="Edm.String" MaxLength="40" sap:label="City"/>
-                <Property Name="DateOfDispatch" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Act. Gds Mvmnt Date" sap:quickinfo="Actual Goods Movement Date"/>
+                <Property Name="InvoiceNumber" Type="Edm.String" MaxLength="10"/>
+                <Property Name="InvoiceDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date"/>
+                <Property Name="DateOfDispatch" Type="Edm.DateTime" Precision="0" sap:display-format="Date"/>
                 <Property Name="TimeOfDispatch" Type="Edm.Time" Precision="0" sap:label="Goods Issue Time" sap:quickinfo="Time of Goods Issue (Local, Relating to a Plant)"/>
+                <Property Name="DestinationTypeCode" Type="Edm.Byte"/>
                 <NavigationProperty Name="toitem" Relationship="cds_zeptd_srv_def.assoc_809945ED60370372A322E8759872C2DE" FromRole="FromRole_assoc_809945ED60370372A322E8759872C2DE" ToRole="ToRole_assoc_809945ED60370372A322E8759872C2DE"/>
             </EntityType>
             <EntityType Name="ZEPTD_ITEM_CDSType" sap:label="CDS View with item data for E-PTD" sap:content-version="1">
@@ -93,12 +96,15 @@
                 <Property Name="DeliveryDocumentItemText" Type="Edm.String" MaxLength="40" sap:label="Item Description" sap:quickinfo="Short Text for Sales Order Item"/>
                 <Property Name="ExternalProductGroup" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="Ext. Product Group" sap:quickinfo="External Product Group"/>
                 <Property Name="CommodityCode" Type="Edm.String" MaxLength="30" sap:label="Commodity Code"/>
+                <Property Name="AlcoholicStrength" Type="Edm.Decimal" Precision="21" Scale="4"/>
+                <Property Name="NumberOfPackages" Type="Edm.Decimal" Precision="12" Scale="2"/>
                 <Property Name="PODTraderId" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Search Term 2"/>
                 <Property Name="PODTraderName" Type="Edm.String" MaxLength="40" sap:label="Name" sap:quickinfo="Name 1"/>
                 <Property Name="PODTraderStreet" Type="Edm.String" MaxLength="60" sap:label="Street"/>
                 <Property Name="PODTraderHouseNumber" Type="Edm.String" MaxLength="10" sap:label="House Number"/>
                 <Property Name="PODTraderPostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code" sap:quickinfo="City Postal Code"/>
                 <Property Name="PODTraderCity" Type="Edm.String" MaxLength="40" sap:label="City"/>
+                <NavigationProperty Name="to_head" Relationship="cds_zeptd_srv_def.assoc_A91FE13D5728CDB8C3C99760689B3F41" FromRole="FromRole_assoc_A91FE13D5728CDB8C3C99760689B3F41" ToRole="ToRole_assoc_A91FE13D5728CDB8C3C99760689B3F41"/>
             </EntityType>
             <EntityType Name="SAP__Currency" sap:content-version="1">
                 <Key>
@@ -237,6 +243,10 @@
             <ComplexType Name="SAP__HeaderFooterField">
                 <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
             </ComplexType>
+            <Association Name="assoc_A91FE13D5728CDB8C3C99760689B3F41" sap:content-version="1">
+                <End Type="cds_zeptd_srv_def.ZEPTD_ITEM_CDSType" Multiplicity="1" Role="FromRole_assoc_A91FE13D5728CDB8C3C99760689B3F41"/>
+                <End Type="cds_zeptd_srv_def.ZEPTD_CDSType" Multiplicity="0..1" Role="ToRole_assoc_A91FE13D5728CDB8C3C99760689B3F41"/>
+            </Association>
             <Association Name="assoc_809945ED60370372A322E8759872C2DE" sap:content-version="1">
                 <End Type="cds_zeptd_srv_def.ZEPTD_CDSType" Multiplicity="1" Role="FromRole_assoc_809945ED60370372A322E8759872C2DE"/>
                 <End Type="cds_zeptd_srv_def.ZEPTD_ITEM_CDSType" Multiplicity="*" Role="ToRole_assoc_809945ED60370372A322E8759872C2DE"/>
@@ -352,6 +362,10 @@
                 <EntitySet Name="SAP__Currencies" EntityType="cds_zeptd_srv_def.SAP__Currency" sap:content-version="1"/>
                 <EntitySet Name="SAP__UnitsOfMeasure" EntityType="cds_zeptd_srv_def.SAP__UnitOfMeasure" sap:content-version="1"/>
                 <EntitySet Name="SAP__MyDocumentDescriptions" EntityType="cds_zeptd_srv_def.SAP__DocumentDescription" sap:content-version="1"/>
+                <AssociationSet Name="assoc_A91FE13D5728CDB8C3C99760689B3F41" Association="cds_zeptd_srv_def.assoc_A91FE13D5728CDB8C3C99760689B3F41" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZEPTD_ITEM_CDS" Role="FromRole_assoc_A91FE13D5728CDB8C3C99760689B3F41"/>
+                    <End EntitySet="ZEPTD_CDS" Role="ToRole_assoc_A91FE13D5728CDB8C3C99760689B3F41"/>
+                </AssociationSet>
                 <AssociationSet Name="assoc_809945ED60370372A322E8759872C2DE" Association="cds_zeptd_srv_def.assoc_809945ED60370372A322E8759872C2DE" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
                     <End EntitySet="ZEPTD_CDS" Role="FromRole_assoc_809945ED60370372A322E8759872C2DE"/>
                     <End EntitySet="ZEPTD_ITEM_CDS" Role="ToRole_assoc_809945ED60370372A322E8759872C2DE"/>
@@ -435,6 +449,22 @@
                 <Annotation Term="Capabilities.InsertRestrictions">
                     <Record>
                         <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_head"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
                     </Record>
                 </Annotation>
                 <Annotation Term="Capabilities.UpdateRestrictions">

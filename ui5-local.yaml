@@ -39,9 +39,9 @@ server:
       configuration:
         mountPath: /
         services:
-          - urlPath: /sap/opu/odata4/sap/zeptd_srv_bind/srvd/sap/zeptd_srv_def/0001
-            metadataPath: ./webapp/localService/metadata.xml
-            mockdataPath: ./webapp/localService/mockdata
+          - urlPath: /sap/opu/odata/sap/ZEPTD_SRV_BIND
+            metadataPath: ./webapp/localService/ZEPTD_SRV_BIND/metadata.xml
+            mockdataPath: ./webapp/localService/ZEPTD_SRV_BIND/mockdata
             generateMockData: true
         annotations: []
     - name: fiori-tools-preview

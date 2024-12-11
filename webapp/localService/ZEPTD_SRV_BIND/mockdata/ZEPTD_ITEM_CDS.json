@@ -17,7 +17,9 @@
         "PODTraderStreet": "PODTraderStreet1",
         "PODTraderHouseNumber": "PODTrader1",
         "PODTraderPostalCode": "PODTrader1",
-        "PODTraderCity": "PODTraderCity1"
+        "PODTraderCity": "PODTraderCity1",
+        "AlcoholicStrength": 35,
+        "NumberOfPackages": 5
     },
     {
         "DeliveryDocument": "80000183",
@@ -37,7 +39,9 @@
         "PODTraderStreet": "PODTraderStreet2",
         "PODTraderHouseNumber": "PODTrader2",
         "PODTraderPostalCode": "PODTrader2",
-        "PODTraderCity": "PODTraderCity2"
+        "PODTraderCity": "PODTraderCity2",
+        "AlcoholicStrength": 14,
+        "NumberOfPackages": 4
     },
     {
         "DeliveryDocument": "80000184",
@@ -57,7 +61,9 @@
         "PODTraderStreet": "PODTraderStreet3",
         "PODTraderHouseNumber": "PODTrader3",
         "PODTraderPostalCode": "PODTrader3",
-        "PODTraderCity": "PODTraderCity3"
+        "PODTraderCity": "PODTraderCity3",
+        "AlcoholicStrength": 14,
+        "NumberOfPackages": 3
     },
     {
         "DeliveryDocument": "80000184",
@@ -77,7 +83,9 @@
         "PODTraderStreet": "PODTraderStreet4",
         "PODTraderHouseNumber": "PODTrader4",
         "PODTraderPostalCode": "PODTrader4",
-        "PODTraderCity": "PODTraderCity4"
+        "PODTraderCity": "PODTraderCity4",
+        "AlcoholicStrength": 9,
+        "NumberOfPackages": 2
     },
     {
         "DeliveryDocument": "80000185",
@@ -97,7 +105,9 @@
         "PODTraderStreet": "PODTraderStreet5",
         "PODTraderHouseNumber": "PODTrader5",
         "PODTraderPostalCode": "PODTrader5",
-        "PODTraderCity": "PODTraderCity5"
+        "PODTraderCity": "PODTraderCity5",
+        "AlcoholicStrength": 10,
+        "NumberOfPackages": 1
     },
     {
         "DeliveryDocument": "80000185",
@@ -117,7 +127,9 @@
         "PODTraderStreet": "PODTraderStreet6",
         "PODTraderHouseNumber": "PODTrader6",
         "PODTraderPostalCode": "PODTrader6",
-        "PODTraderCity": "PODTraderCity6"
+        "PODTraderCity": "PODTraderCity6",
+        "AlcoholicStrength": 14,
+        "NumberOfPackages": 1
     },
     {
         "DeliveryDocument": "80000185",
@@ -137,6 +149,8 @@
         "PODTraderStreet": "PODTraderStreet7",
         "PODTraderHouseNumber": "PODTrader7",
         "PODTraderPostalCode": "PODTrader7",
-        "PODTraderCity": "PODTraderCity7"
+        "PODTraderCity": "PODTraderCity7",
+        "AlcoholicStrength": 14,
+        "NumberOfPackages": 2
     }
 ]

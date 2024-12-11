@@ -282,7 +282,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": body.PODTraderName
+                                                                "text": items[0] ? items[0].PODTraderName : ""
                                                             }
                                                         ]
                                                     },
@@ -292,7 +292,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": body.PODTraderStreet
+                                                                "text": items[0] ? items[0].PODTraderStreet : ""
                                                             }
                                                         ]
                                                     },
@@ -302,7 +302,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": body.PODTraderHouseNumber
+                                                                "text": items[0] ? items[0].PODTraderHouseNumber : ""
                                                             }
                                                         ]
                                                     },
@@ -312,7 +312,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": body.PODTraderPostalCode
+                                                                "text": items[0] ? items[0].PODTraderPostalCode : ""
                                                             }
                                                         ]
                                                     },
@@ -322,7 +322,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": body.PODTraderCity
+                                                                "text": items[0] ? items[0].PODTraderCity : ""
                                                             }
                                                         ]
                                                     }
@@ -435,7 +435,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "1"
+                                                                "text": body.DestinationTypeCode
                                                             }
                                                         ]
                                                     },
@@ -518,7 +518,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "41280-23010123-23"
+                                                                "text": body.InvoiceNumber
                                                             }
                                                         ]
                                                     },
@@ -528,7 +528,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "2023-07-26"
+                                                                "text": body.InvoiceDate ? body.InvoiceDate.toLocaleDateString('en-CA') : ""
                                                             }
                                                         ]
                                                     },
@@ -548,7 +548,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": body.DateOfDispatch.toLocaleDateString('en-CA')
+                                                                "text": body.DateOfDispatch ? body.DateOfDispatch.toLocaleDateString('en-CA') : ""
                                                             }
                                                         ]
                                                     },
@@ -584,7 +584,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": "ZD 385 AO"
+                                                                "text": ""
                                                             }
                                                         ]
                                                     },
@@ -689,7 +689,7 @@ sap.ui.define([
                         "elements": [
                             {
                                 "type": "text",
-                                "text": "1"
+                                "text": Number(item.AlcoholicStrength).toFixed(2)
                             }
                         ]
                     },
@@ -726,7 +726,7 @@ sap.ui.define([
                                 "elements": [
                                     {
                                         "type": "text",
-                                        "text": "1"
+                                        "text": "CT"
                                     }
                                 ]
                             },
@@ -736,7 +736,7 @@ sap.ui.define([
                                 "elements": [
                                     {
                                         "type": "text",
-                                        "text": "1"
+                                        "text": Math.ceil(Number(item.NumberOfPackages))
                                     }
                                 ]
                             },

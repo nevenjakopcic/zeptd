@@ -22,37 +22,6 @@
                     formatter: 'formatMessage'
             }" />
         </semantic:titleHeading>
-        <semantic:headerContent>
-            <fb:FilterBar id="filterBar" useToolbar="false" >
-                <fb:filterGroupItems>
-                    <fb:FilterGroupItem name="Delivery" label="Delivery" groupName="group1" visibleInFilterBar="true">
-                        <fb:control>
-                            <Input id="deliveryFilter" liveChange="onFilterChange" />
-                        </fb:control>
-                    </fb:FilterGroupItem>
-                    <fb:FilterGroupItem name="CreationDate" label="Creation Date" groupName="group2">
-                        <fb:control>
-                            <Input id="secondFilter" liveChange="onFilterChange" />
-                        </fb:control>
-                    </fb:FilterGroupItem>
-                    <fb:FilterGroupItem name="Customer" label="Customer" groupName="group3">
-                        <fb:control>
-                            <Input id="thirdFilter" liveChange="onFilterChange" />
-                        </fb:control>
-                    </fb:FilterGroupItem>
-                    <fb:FilterGroupItem name="Destination" label="Destination" groupName="group4">
-                        <fb:control>
-                            <Input id="fourthFilter" liveChange="onFilterChange" />
-                        </fb:control>
-                    </fb:FilterGroupItem>
-                    <fb:FilterGroupItem name="PlaceOfDispatch" label="Place of Dispatch" groupName="group5">
-                        <fb:control>
-                            <Input id="fifthFilter" liveChange="onFilterChange" />
-                        </fb:control>
-                    </fb:FilterGroupItem>
-                </fb:filterGroupItems>
-            </fb:FilterBar>
-        </semantic:headerContent>
         <semantic:content>
             <List
                 id="list"
@@ -78,6 +47,36 @@
                         illustrationType="sapIllus-NoFilterResults"
                         enableDefaultTitleAndDescription="false" />
                 </noData>
+                                <infoToolbar>
+                    <Toolbar
+                        id="filterBar"
+                        active="true"
+                        visible="{masterView>/isFilterBarVisible}"
+                        press=".onOpenViewSettings">
+                        <Title
+                            id="filterBarLabel"
+                            text="{masterView>/filterBarLabel}" />
+                    </Toolbar>
+                </infoToolbar>
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <SearchField
+                            id="searchField"
+                            showRefreshButton="true"
+                            tooltip="{i18n>masterSearchTooltip}"
+                            placeholder="{i18n>masterSearchPlaceholder}"
+                            width="100%"
+                            search=".onSearch">
+                            <layoutData>
+                                <OverflowToolbarLayoutData
+                                    minWidth="150px"
+                                    maxWidth="240px"
+                                    shrinkable="true"
+                                    priority="NeverOverflow" />
+                            </layoutData>
+                        </SearchField>
+                    </OverflowToolbar>
+                </headerToolbar>
                 <items>
                     <ObjectListItem
                         type="{=  ${device>/system/phone} ? 'Active' : 'Inactive' }"
