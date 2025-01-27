@@ -29,10 +29,16 @@
                 class="sapFDynamicPageAlignContent"
                 items="{
                     path: '/ZEPTD_CDS',
-                    sorter: {
-                        path: 'DeliveryDocument',
-                        descending: true
-                    },
+                    sorter: [
+                        {
+                            path: 'CreationDate',
+                            descending: true
+                        },
+                        {
+                            path: 'DeliveryDocument',
+                            descending: true
+                        }
+                    ],
                     groupHeaderFactory: '.createGroupHeader'
                 }"
                 busyIndicatorDelay="{masterView>/delay}"

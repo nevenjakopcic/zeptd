@@ -7,10 +7,41 @@ sap.ui.define([
 
     return {
         generate: function (body, items) {
+            console.log(items);
+            items = this.preprocessItems(items);
+            console.log(items);
+
             let json = this.baseJsonTemplate(body, items);
 
             let xml = js2xml(json, { compact: false, ignoreComment: true, spaces: 4 });
             return xml;
+        },
+
+        preprocessItems: function (items) {
+            // combine items of same material
+            let output = [];
+
+            items.forEach(item => {
+                let existing = output.filter(function(v, i) { return v["Material"] === item["Material"]});
+
+                if (existing.length > 0) {
+                    let existingIndex = output.indexOf(existing[0]);
+                    output[existingIndex] = this.combineItems(output[existingIndex], item);
+                } else {
+                    output.push(item);
+                }
+            });
+
+            return output;
+        },
+
+        combineItems: function (target, source) {
+            target["ItemVolume"]       += source["ItemVolume"];
+            target["ItemGrossWeight"]  += source["ItemGrossWeight"];
+            target["ItemNetWeight"]    += source["ItemNetWeight"];
+            target["NumberOfPackages"] += source["NumberOfPackages"];
+
+            return target;
         },
 
         baseJsonTemplate: function (body, items) {
@@ -282,7 +313,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": items[0] ? items[0].PODTraderName : ""
+                                                                "text": ""
                                                             }
                                                         ]
                                                     },
@@ -292,7 +323,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": items[0] ? items[0].PODTraderStreet : ""
+                                                                "text": ""
                                                             }
                                                         ]
                                                     },
@@ -302,7 +333,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": items[0] ? items[0].PODTraderHouseNumber : ""
+                                                                "text": ""
                                                             }
                                                         ]
                                                     },
@@ -312,7 +343,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": items[0] ? items[0].PODTraderPostalCode : ""
+                                                                "text": ""
                                                             }
                                                         ]
                                                     },
@@ -322,7 +353,7 @@ sap.ui.define([
                                                         "elements": [
                                                             {
                                                                 "type": "text",
-                                                                "text": items[0] ? items[0].PODTraderCity : ""
+                                                                "text": ""
                                                             }
                                                         ]
                                                     }
@@ -619,6 +650,8 @@ sap.ui.define([
         },
 
         bodyEadJsonTemplate: function (index, item) {
+            const regex = /\/\d+/g;
+            
             return {
                 "type": "element",
                 "name": "ns2:BodyEad",
@@ -659,7 +692,7 @@ sap.ui.define([
                         "elements": [
                             {
                                 "type": "text",
-                                "text": item.OriginalDeliveryQuantity
+                                "text": item.ItemVolume
                             }
                         ]
                     },
@@ -712,7 +745,7 @@ sap.ui.define([
                         "elements": [
                             {
                                 "type": "text",
-                                "text": item.DeliveryDocumentItemText.replace("%", "")
+                                "text": item.DeliveryDocumentItemText.replace("%", "vol").replace(regex, '')
                             }
                         ]
                     },

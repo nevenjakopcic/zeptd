@@ -88,7 +88,7 @@ sap.ui.define([
                     this.getView().getModel().read(`/ZEPTD_CDS(DeliveryDocument='${this._objectId}')`, {
                         success: function (data) {
                             bodyData = data;
-                            console.log("Body data:", bodyData);
+                            // console.log("Body data:", bodyData);
                         },
                         error: function (error) {
                             console.error("Error fetching body data:", error);
@@ -102,7 +102,7 @@ sap.ui.define([
                         },
                         success: function (data) {
                             childrenData = data.results;
-                            console.log("Children data:", childrenData);
+                            // console.log("Children data:", childrenData);
 
                             if (bodyData) {
                                 let xml = XmlGenerator.generate(bodyData, childrenData);
