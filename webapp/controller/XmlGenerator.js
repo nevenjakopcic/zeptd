@@ -18,9 +18,9 @@ sap.ui.define([
         },
 
         preprocessItems: function (items) {
-            // combine items of same material
             let output = [];
-
+            
+            // combine items of same material
             items.forEach(item => {
                 let existing = output.filter(function(v, i) { return v["Material"] === item["Material"]});
 
@@ -36,10 +36,10 @@ sap.ui.define([
         },
 
         combineItems: function (target, source) {
-            target["ItemVolume"]       += source["ItemVolume"];
-            target["ItemGrossWeight"]  += source["ItemGrossWeight"];
-            target["ItemNetWeight"]    += source["ItemNetWeight"];
-            target["NumberOfPackages"] += source["NumberOfPackages"];
+            target["ItemVolume"]       = Number(target["ItemVolume"])       + Number(source["ItemVolume"]);
+            target["ItemGrossWeight"]  = Number(target["ItemGrossWeight"])  + Number(source["ItemGrossWeight"]);
+            target["ItemNetWeight"]    = Number(target["ItemNetWeight"])    + Number(source["ItemNetWeight"]);
+            target["NumberOfPackages"] = Number(target["NumberOfPackages"]) + Number(source["NumberOfPackages"]);
 
             return target;
         },
