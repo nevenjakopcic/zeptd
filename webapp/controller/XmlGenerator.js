@@ -56,19 +56,19 @@ sap.ui.define([
                 "elements": [
                     {
                         "type": "element",
-                        "name": "ns2:IE815",
+                        "name": "ie815:IE815",
                         "attributes": {
-                            "xmlns": "urn:publicid:-:EC:DGTAXUD:EMCS:PHASE4:TMS:V3.13",
-                            "xmlns:ns2": "urn:publicid:-:EC:DGTAXUD:EMCS:PHASE4:IE815:V3.13"
+                            "xmlns:ie815": "http://apisit.hr/b22/emcs/ie/2012/ie815",
+                            "xmlns:tms": "http://apisit.hr/b22/emcs/ie/2012/tms"
                         },
                         "elements": [
                             {
                                 "type": "element",
-                                "name": "ns2:Header",
+                                "name": "ie815:Header",
                                 "elements": [
                                     {
                                         "type": "element",
-                                        "name": "MessageSender",
+                                        "name": "tms:MessageSender",
                                         "elements": [
                                             {
                                                 "type": "text",
@@ -78,7 +78,7 @@ sap.ui.define([
                                     },
                                     {
                                         "type": "element",
-                                        "name": "MessageRecipient",
+                                        "name": "tms:MessageRecipient",
                                         "elements": [
                                             {
                                                 "type": "text",
@@ -88,7 +88,7 @@ sap.ui.define([
                                     },
                                     {
                                         "type": "element",
-                                        "name": "DateOfPreparation",
+                                        "name": "tms:DateOfPreparation",
                                         "elements": [
                                             {
                                                 "type": "text",
@@ -98,17 +98,17 @@ sap.ui.define([
                                     },
                                     {
                                         "type": "element",
-                                        "name": "TimeOfPreparation",
+                                        "name": "tms:TimeOfPreparation",
                                         "elements": [
                                             {
                                                 "type": "text",
-                                                "text": DateFormat.getDateInstance({ pattern: "yyyy-MM-dd HH:mm:ss" }).format(UI5Date.getInstance())
+                                                "text": DateFormat.getDateInstance({ pattern: "HH:mm:ss" }).format(UI5Date.getInstance())
                                             }
                                         ]
                                     },
                                     {
                                         "type": "element",
-                                        "name": "MessageIdentifier",
+                                        "name": "tms:MessageIdentifier",
                                         "elements": [
                                             {
                                                 "type": "text",
@@ -120,19 +120,19 @@ sap.ui.define([
                             },
                             {
                                 "type": "element",
-                                "name": "ns2:Body",
+                                "name": "ie815:Body",
                                 "elements": [
                                     {
                                         "type": "element",
-                                        "name": "ns2:SubmittedDraftOfEAD",
+                                        "name": "ie815:SubmittedDraftOfEADESAD",
                                         "elements": [
                                             {
                                                 "type": "element",
-                                                "name": "ns2:Attributes",
+                                                "name": "ie815:Attributes",
                                                 "elements": [
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:SubmissionMessageType",
+                                                        "name": "ie815:SubmissionMessageType",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -142,7 +142,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:DeferredSubmissionFlag",
+                                                        "name": "ie815:DeferredSubmissionFlag",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -154,14 +154,14 @@ sap.ui.define([
                                             },
                                             {
                                                 "type": "element",
-                                                "name": "ns2:ConsigneeTrader",
+                                                "name": "ie815:ConsigneeTrader",
                                                 "attributes": {
                                                     "language": "hr"
                                                 },
                                                 "elements": [
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:Traderid",
+                                                        "name": "ie815:Traderid",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -171,7 +171,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:TraderName",
+                                                        "name": "ie815:TraderName",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -181,7 +181,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:StreetName",
+                                                        "name": "ie815:StreetName",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -191,7 +191,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:StreetNumber",
+                                                        "name": "ie815:StreetNumber",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -201,7 +201,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:Postcode",
+                                                        "name": "ie815:Postcode",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -211,7 +211,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:City",
+                                                        "name": "ie815:City",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -223,14 +223,14 @@ sap.ui.define([
                                             },
                                             {
                                                 "type": "element",
-                                                "name": "ns2:ConsignorTrader",
+                                                "name": "ie815:ConsignorTrader",
                                                 "attributes": {
                                                     "language": "hr"
                                                 },
                                                 "elements": [
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:TraderExciseNumber",
+                                                        "name": "ie815:TraderExciseNumber",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -240,7 +240,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:TraderName",
+                                                        "name": "ie815:TraderName",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -250,7 +250,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:StreetName",
+                                                        "name": "ie815:StreetName",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -260,7 +260,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:StreetNumber",
+                                                        "name": "ie815:StreetNumber",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -270,7 +270,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:Postcode",
+                                                        "name": "ie815:Postcode",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -280,7 +280,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:City",
+                                                        "name": "ie815:City",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -292,14 +292,14 @@ sap.ui.define([
                                             },
                                             {
                                                 "type": "element",
-                                                "name": "ns2:PlaceOfDispatchTrader",
+                                                "name": "ie815:PlaceOfDispatchTrader",
                                                 "attributes": {
                                                     "language": "hr"
                                                 },
                                                 "elements": [
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:ReferenceOfTaxWarehouse",
+                                                        "name": "ie815:ReferenceOfTaxWarehouse",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -309,7 +309,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:TraderName",
+                                                        "name": "ie815:TraderName",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -319,7 +319,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:StreetName",
+                                                        "name": "ie815:StreetName",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -329,7 +329,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:StreetNumber",
+                                                        "name": "ie815:StreetNumber",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -339,7 +339,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:Postcode",
+                                                        "name": "ie815:Postcode",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -349,7 +349,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:City",
+                                                        "name": "ie815:City",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -361,22 +361,22 @@ sap.ui.define([
                                             },
                                             {
                                                 "type": "element",
-                                                "name": "ns2:DispatchImportOffice"
+                                                "name": "ie815:DispatchImportOffice"
                                             },
                                             {
                                                 "type": "element",
-                                                "name": "ns2:ComplementConsigneeTrader"
+                                                "name": "ie815:ComplementConsigneeTrader"
                                             },
                                             {
                                                 "type": "element",
-                                                "name": "ns2:DeliveryPlaceTrader",
+                                                "name": "ie815:DeliveryPlaceTrader",
                                                 "attributes": {
                                                     "language": "hr"
                                                 },
                                                 "elements": [
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:Traderid",
+                                                        "name": "ie815:Traderid",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -386,7 +386,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:TraderName",
+                                                        "name": "ie815:TraderName",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -396,7 +396,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:StreetName",
+                                                        "name": "ie815:StreetName",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -406,7 +406,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:StreetNumber",
+                                                        "name": "ie815:StreetNumber",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -416,7 +416,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:Postcode",
+                                                        "name": "ie815:Postcode",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -426,7 +426,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:City",
+                                                        "name": "ie815:City",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -438,15 +438,15 @@ sap.ui.define([
                                             },
                                             {
                                                 "type": "element",
-                                                "name": "ns2:DeliveryPlaceCustomsOffice"
+                                                "name": "ie815:DeliveryPlaceCustomsOffice"
                                             },
                                             {
                                                 "type": "element",
-                                                "name": "ns2:CompetentAuthorityDispatchOffice",
+                                                "name": "ie815:CompetentAuthorityDispatchOffice",
                                                 "elements": [
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:ReferenceNumber",
+                                                        "name": "ie815:ReferenceNumber",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -458,11 +458,11 @@ sap.ui.define([
                                             },
                                             {
                                                 "type": "element",
-                                                "name": "ns2:HeaderEad",
+                                                "name": "ie815:HeaderEadEsad",
                                                 "elements": [
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:DestinationTypeCode",
+                                                        "name": "ie815:DestinationTypeCode",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -472,7 +472,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:JourneyTime",
+                                                        "name": "ie815:JourneyTime",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -482,7 +482,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:TransportArrangement",
+                                                        "name": "ie815:TransportArrangement",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -494,11 +494,11 @@ sap.ui.define([
                                             },
                                             {
                                                 "type": "element",
-                                                "name": "ns2:TransportMode",
+                                                "name": "ie815:TransportMode",
                                                 "elements": [
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:TransportModeCode",
+                                                        "name": "ie815:TransportModeCode",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -508,17 +508,17 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:ComplementaryInformation",
+                                                        "name": "ie815:ComplementaryInformation",
                                                     }
                                                 ]
                                             },
                                             {
                                                 "type": "element",
-                                                "name": "ns2:MovementGuarantee",
+                                                "name": "ie815:MovementGuarantee",
                                                 "elements": [
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:GuarantorTypeCode",
+                                                        "name": "ie815:GuarantorTypeCode",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -531,11 +531,11 @@ sap.ui.define([
                                             ...this.generateBodyEads(items),
                                             {
                                                 "type": "element",
-                                                "name": "ns2:Ead",
+                                                "name": "ie815:EadEsadDraft",
                                                 "elements": [
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:LocalReferenceNumber",
+                                                        "name": "ie815:LocalReferenceNumber",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -545,7 +545,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:InvoiceNumber",
+                                                        "name": "ie815:InvoiceNumber",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -555,7 +555,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:InvoiceDate",
+                                                        "name": "ie815:InvoiceDate",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -565,7 +565,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:OriginTypeCode",
+                                                        "name": "ie815:OriginTypeCode",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -575,7 +575,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:DateOfDispatch",
+                                                        "name": "ie815:DateOfDispatch",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -585,7 +585,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:TimeOfDispatch",
+                                                        "name": "ie815:TimeOfDispatch",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -597,11 +597,11 @@ sap.ui.define([
                                             },
                                             {
                                                 "type": "element",
-                                                "name": "ns2:TransportDetails",
+                                                "name": "ie815:TransportDetails",
                                                 "elements": [
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:TransportUnitCode",
+                                                        "name": "ie815:TransportUnitCode",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -611,7 +611,7 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:IdentityOfTransportUnits",
+                                                        "name": "ie815:IdentityOfTransportUnits",
                                                         "elements": [
                                                             {
                                                                 "type": "text",
@@ -621,11 +621,11 @@ sap.ui.define([
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:ComplementaryInformation",
+                                                        "name": "ie815:ComplementaryInformation",
                                                     },
                                                     {
                                                         "type": "element",
-                                                        "name": "ns2:SealInformation",
+                                                        "name": "ie815:SealInformation",
                                                     }
                                                 ]
                                             }
@@ -654,11 +654,11 @@ sap.ui.define([
             
             return {
                 "type": "element",
-                "name": "ns2:BodyEad",
+                "name": "ie815:BodyEadEsad",
                 "elements": [
                     {
                         "type": "element",
-                        "name": "ns2:BodyRecordUniqueReference",
+                        "name": "ie815:BodyRecordUniqueReference",
                         "elements": [
                             {
                                 "type": "text",
@@ -668,7 +668,7 @@ sap.ui.define([
                     },
                     {
                         "type": "element",
-                        "name": "ns2:ExciseProductCode",
+                        "name": "ie815:ExciseProductCode",
                         "elements": [
                             {
                                 "type": "text",
@@ -678,7 +678,7 @@ sap.ui.define([
                     },
                     {
                         "type": "element",
-                        "name": "ns2:CnCode",
+                        "name": "ie815:CnCode",
                         "elements": [
                             {
                                 "type": "text",
@@ -688,7 +688,7 @@ sap.ui.define([
                     },
                     {
                         "type": "element",
-                        "name": "ns2:Quantity",
+                        "name": "ie815:Quantity",
                         "elements": [
                             {
                                 "type": "text",
@@ -698,7 +698,7 @@ sap.ui.define([
                     },
                     {
                         "type": "element",
-                        "name": "ns2:GrossWeight",
+                        "name": "ie815:GrossMass",
                         "elements": [
                             {
                                 "type": "text",
@@ -708,7 +708,7 @@ sap.ui.define([
                     },
                     {
                         "type": "element",
-                        "name": "ns2:NetWeight",
+                        "name": "ie815:NetMass",
                         "elements": [
                             {
                                 "type": "text",
@@ -718,7 +718,7 @@ sap.ui.define([
                     },
                     {
                         "type": "element",
-                        "name": "ns2:AlcoholicStrength",
+                        "name": "ie815:AlcoholicStrengthByVolumeInPercentage",
                         "elements": [
                             {
                                 "type": "text",
@@ -728,17 +728,17 @@ sap.ui.define([
                     },
                     {
                         "type": "element",
-                        "name": "ns2:FiscalMarkUsedFlag",
+                        "name": "ie815:FiscalMarkUsedFlag",
                         "elements": [
                             {
                                 "type": "text",
-                                "text": "false"
+                                "text": "0"
                             }
                         ]
                     },
                     {
                         "type": "element",
-                        "name": "ns2:CommercialDescription",
+                        "name": "ie815:CommercialDescription",
                         "attributes": {
                             "language": "hr"
                         },
@@ -751,11 +751,11 @@ sap.ui.define([
                     },
                     {
                         "type": "element",
-                        "name": "ns2:Package",
+                        "name": "ie815:Package",
                         "elements": [
                             {
                                 "type": "element",
-                                "name": "ns2:KindOfPackages",
+                                "name": "ie815:KindOfPackages",
                                 "elements": [
                                     {
                                         "type": "text",
@@ -765,7 +765,7 @@ sap.ui.define([
                             },
                             {
                                 "type": "element",
-                                "name": "ns2:NumberOfPackages",
+                                "name": "ie815:NumberOfPackages",
                                 "elements": [
                                     {
                                         "type": "text",
@@ -775,7 +775,7 @@ sap.ui.define([
                             },
                             {
                                 "type": "element",
-                                "name": "ns2:SealInformation",
+                                "name": "ie815:SealInformation",
                             }
                         ]
                     }
